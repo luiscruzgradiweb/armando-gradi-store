@@ -2,5 +2,12 @@
 
 {{ collections['coleccionprod'].handle | json }}
 {% for product in collections['coleccionprod'].products %}
-    <h3>{{ product.title }}</h3>
+    <div>
+        <h3>{{ product.title }}</h3>
+        {% for image in product.images %}
+            {{ image | image_url: width: 300 }}
+          {% endfor %}
+    </div>
 {% endfor %}
+
+
