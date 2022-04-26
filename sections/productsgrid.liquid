@@ -1,1 +1,6 @@
-<h1>Hola Mundo</h1>
+
+
+{{ collections['coleccionprod'].handle | json }}
+{% for product in collections['coleccionprod'].products %}
+    <h3>{{ product.title }}</h3>
+{% endfor %}
