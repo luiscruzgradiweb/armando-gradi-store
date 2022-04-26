@@ -7,7 +7,7 @@
         {% for image in product.images %}
             <img src="{{ image | image_url: width: 300 }}" alt="{{ product.title }}" loading='lazy' width=300 height=300/>
           {% endfor %}
-        <h2>{{ product.title }}</h2>
+        <h2>{{ product.price }}</h2>
         <button>Add to cart</button>
     </div>
 {% endfor %}
