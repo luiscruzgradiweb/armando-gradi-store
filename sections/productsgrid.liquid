@@ -39,7 +39,6 @@
                 <img src="{{ image | image_url: width: 300 }}" alt="{{ product.title }}" loading='lazy' width=300 height=300/>
               {% endfor %} {% endcomment %}
               {% assign url=product.title | capitalize | strip | replace: " ", "-" %}
-              <h1>{{ product | json }}</h1>
               <a href="https://armando-gradi-store.myshopify.com/products/{{ url }}">
                 <img src="{{ product.images | first | image_url: width: 300 }}" alt="{{ product.title }}" loading='lazy' width=300 height=300/>
               </a>  
