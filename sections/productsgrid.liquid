@@ -53,7 +53,7 @@
                     {% for variant in product.variants %}
                         {% liquid 
                             assign variantColor=variant.option1 | capitalize 
-                            assign colorCustomer=tempColor | split: ":" | first | capitalize
+                            assign colorCustomer=tempColor | split: ":" | first | capitalize | strip
                         %}
                         {% if variantColor == colorCustomer %}
                             <input class="input_productgrid" type='radio' style="accent-color:{{ color }}" checked="checked"/>
