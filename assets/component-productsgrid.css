@@ -1,6 +1,6 @@
 .product_container{
     width:300px;
-    height:900px;
+    min-height:fit-content;
     display:flex;
     align-items:center;
     justify-content:center;
@@ -8,7 +8,7 @@
 }
 
 .button_productgrid{
-    background-color: red;
+    background-color: black;
     border: none;
     width: 90%;
     height: 30px;
