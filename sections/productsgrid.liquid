@@ -6,7 +6,7 @@
     {% for product in collections['coleccionprod'].products %}
         <div class='product_container'>
             <h3>{{ product.title }}</h3>
-            {% for image in product.images %}
+            {% for image in product.images.first %}
                 <img src="{{ image | image_url: width: 300 }}" alt="{{ product.title }}" loading='lazy' width=300 height=300/>
               {% endfor %}
             <h2>{{ product.price }}</h2>
