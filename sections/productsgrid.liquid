@@ -11,7 +11,8 @@
               {% endfor %} {% endcomment %}
             <img src="{{ product.images | first | image_url: width: 300 }}" alt="{{ product.title }}" loading='lazy' width=300 height=300/>
             {% assign tempPrice=product.price | divided_by: 100 | round: 2 %}
-            <h2>$ {{ tempPrice }}</h2>
+            {% assign tempPrice=tempPrice | append: '€' %}
+            <h2>{{ tempPrice }}</h2>
             <button class='button_productgrid'>Add to cart</button>
         </div>
     {% endfor %}
