@@ -47,7 +47,7 @@
                     <input class="input_productgrid" type='radio' style="accent-color:{{ color }}" checked="checked"/>
                 {% endfor %}
             </div>
-            <h3>id: {{ product.variants.title | json }}</h3>
+            <h3>id: {{ product.variants | json }}</h3>
             <button class='button_productgrid'>Add to cart</button>
         </div>
     {% endfor %}
