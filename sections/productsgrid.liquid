@@ -3,8 +3,8 @@
 
 {%- style -%}
 
-    .color_decoration {
-        color: #F71455;
+    .color_{{ color }}-decoration{
+        color: #EAF714 ;
     }
 
 {%- endstyle -%}
@@ -24,8 +24,10 @@
             {% assign colors=settings.colors_gradiproducts | split: "," %}
             <h2>{{ tempPrice }}</h2>
             {% for tempColor in colors %}
-                {% assign color=tempColor | split: ":" | last %}
-                <h3 class="color_decoration">Este es el color</h3>    
+                {% liquid 
+                    assign color=tempColor | split: ":" | last 
+                %}
+                <h3 class="color_{{ color }}-decoration">Este es el color</h3>    
             {% endfor %}
             <button class='button_productgrid'>Add to cart</button>
         </div>
