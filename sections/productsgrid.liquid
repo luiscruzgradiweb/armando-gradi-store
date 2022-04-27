@@ -2,6 +2,13 @@
 <noscript>{{ 'component-productsgrid.css' | asset_url | stylesheet_tag }}</noscript>
 <script>
 
+    window.document.getElementById('component-productsgrid').addEventListener('click', function(e) {
+        if (e) {
+            e.preventDefault();
+            console.log('evento click ', e);
+        }
+    });
+
     let formData = {
         'items': [{
          'id': 41772295356605,
@@ -16,7 +23,6 @@
          body: JSON.stringify(formData)
        })
        .then(response => {
-        console.log('exito')
          return response.json();
        })
        .catch((error) => {
@@ -49,7 +55,7 @@
                 {% endfor %}
             </div>
             {% comment %} <h3>id: {{ product.variants | json }}</h3> {% endcomment %}
-            <button class='button_productgrid'>Add to cart</button>
+            <button id="btn_add_to_cart" productID="{{ product.variants.first.id }}" class='button_productgrid'>Add to cart</button>
         </div>
     {% endfor %}
 </div>
