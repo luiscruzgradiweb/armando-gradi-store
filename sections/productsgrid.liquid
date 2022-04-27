@@ -57,7 +57,7 @@
                 {% endfor %}
             </div>
             {% comment %} <h3>id: {{ product.variants | json }}</h3> {% endcomment %}
-            <button onclick="addToCart(product.variants)" class='button_productgrid'>Add to cart</button>
+            <button onclick=addToCart({{ product.variants }}) class='button_productgrid'>Add to cart</button>
         </div>
     {% endfor %}
 </div>
