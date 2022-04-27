@@ -50,8 +50,15 @@
                     {% liquid 
                         assign color=tempColor | split: ":" | last 
                     %}
-                    <h1>{{ product.variants | json }}</h1>
-                    <input class="input_productgrid" type='radio' style="accent-color:{{ color }}" checked="checked"/>
+                    {% for variant in product.variants %}
+                        {% liquid 
+                            assign variantColor=variant.option1 | capitalize 
+                            assign colorCustomer=tempColor | split: ":" | first | capitalize
+                        %}
+                        {% if variantColor == colorCustomer %}
+                            <input class="input_productgrid" type='radio' style="accent-color:{{ color }}" checked="checked"/>
+                        {% endif %}
+                    {% endfor %}
                 {% endfor %}
             </div>
             {% comment %} <h3>id: {{ product.variants | json }}</h3> {% endcomment %}
