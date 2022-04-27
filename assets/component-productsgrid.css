@@ -23,7 +23,10 @@
     color: white;
     cursor: pointer;
 }
-
+.container_input{
+    width:90%;
+    min-height:55px;
+}
 .input_productgrid{
     width: 50px;
     height: 50px;

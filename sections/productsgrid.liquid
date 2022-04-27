@@ -14,7 +14,7 @@
             {% assign tempPrice=tempPrice | append: '€' %}
             {% assign colors=settings.colors_gradiproducts | split: "," %}
             <h2>{{ tempPrice }}</h2>
-            <div>
+            <div class="container_input">
                 {% for tempColor in colors %}
                     {% liquid 
                         assign color=tempColor | split: ":" | first 
