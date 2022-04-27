@@ -21,7 +21,7 @@
             <img src="{{ product.images | first | image_url: width: 300 }}" alt="{{ product.title }}" loading='lazy' width=300 height=300/>
             {% assign tempPrice=product.price | divided_by: 100.00 | round: 2 %}
             {% assign tempPrice=tempPrice | append: '€' %}
-            {% assign colors=settings.colors_gradiproducts | split: "," %}}
+            {% assign colors=settings.colors_gradiproducts | split: "," %}
             {% for tempColor in colors %}
                 {% assign color=tempColor | split: ":" | last %}
                 <h3 class="color_{{color}}">{{ color }}</h3>    
