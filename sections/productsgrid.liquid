@@ -17,7 +17,7 @@
             <div>
                 {% for tempColor in colors %}
                     {% assign color=tempColor | split: ":" | first %}
-                    <input type='radio' style="background-color:{{ color }}">{{color}} />    
+                    <input type='radio' style="background-color:{{ color }}"/>    
                 {% endfor %}
             </div>
             <button class='button_productgrid'>Add to cart</button>
