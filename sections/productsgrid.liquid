@@ -20,9 +20,10 @@
               {% endfor %} {% endcomment %}
             <img src="{{ product.images | first | image_url: width: 300 }}" alt="{{ product.title }}" loading='lazy' width=300 height=300/>
             {% liquid 
-                assign tempPrice=product.price | divided_by: 100.00 | round: 2 
+                assign tempPrice=product.price | divided_by: 100.00 
+                assign price = tempPrice | round: 2 
             %}
-            {% assign tempPrice=tempPrice | append: '€' %}
+            {% assign price=price | append: '€' %}
             {% assign colors=settings.colors_gradiproducts | split: "," %}
             {% for tempColor in colors %}
                 {% assign color=tempColor | split: ":" | last %}
