@@ -102,7 +102,9 @@
     for(item of inputs) {
         console.log("add event")
         item.addEventListener("mouseover", function(e) {
-            alert("mouseover")
+            console.log(e.target)
+            let image = e.target.getAttibute("imagen_hover")
+            alert(image)
         })
     }
 
