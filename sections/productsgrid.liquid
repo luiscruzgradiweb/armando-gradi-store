@@ -3,8 +3,8 @@
 
 {%- style -%}
 
-    .color_{{ color }}-decoration {
-        color: {{ color }};
+    .color_decoration {
+        color: 'blue';
     }
 
 {%- endstyle -%}
@@ -25,7 +25,7 @@
             <h2>{{ tempPrice }}</h2>
             {% for tempColor in colors %}
                 {% assign color=tempColor | split: ":" | last %}
-                <h3 class="color_{{ color }}-decoration">Este es el color</h3>    
+                <h3 class="color_decoration">Este es el color</h3>    
             {% endfor %}
             <button class='button_productgrid'>Add to cart</button>
         </div>
