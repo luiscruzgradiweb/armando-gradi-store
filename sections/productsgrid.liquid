@@ -10,7 +10,7 @@
        };
     
     const addToCart= (e) => {
-        console.log('ok entramos');
+        console.log('ok entramos', e);
         {% comment %} e.preventDefault();
         console.log('evento click ', e);
         fetch(window.Shopify.routes.root + 'cart/add.js', {
@@ -57,7 +57,7 @@
                 {% endfor %}
             </div>
             {% comment %} <h3>id: {{ product.variants | json }}</h3> {% endcomment %}
-            <button onclick="addToCart()" class='button_productgrid'>Add to cart</button>
+            <button onclick="addToCart(product.variants)" class='button_productgrid'>Add to cart</button>
         </div>
     {% endfor %}
 </div>
