@@ -24,7 +24,7 @@
             {% assign colors=settings.colors_gradiproducts | split: "," %}}
             {% for tempColor in colors %}
                 {% assign color=tempColor | split: ":" | last %}
-                <h3 class="color_{{color}}">{{ settings.colors_gradiproducts }}</h3>    
+                <h3 class="color_{{color}}">{{ color }}</h3>    
             {% endfor %}
             <button class='button_productgrid'>Add to cart</button>
         </div>
