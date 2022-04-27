@@ -100,7 +100,8 @@
 <script>
     let inputs = document.getElementsByClassName("input_productgrid")
     for(item of inputs) {
-        item.addEventListener("onmouseover", function(e) {
+        console.log("add event")
+        item.addEventListener("mouseover", function(e) {
             alert("mouseover")
         })
     }
