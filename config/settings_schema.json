@@ -1150,8 +1150,8 @@
       {
         "type": "textarea",
         "id": "colors_gradiproducts",
-        "label": "Welcome message",
-        "default": "Red: #ff0000, Green: #00ff00, Blue: #0000ff"
+        "label": "Personalizar los colores",
+        "default": "Red: #ff0000<br/> Green: #00ff00<br/> Blue: #0000ff<br/>"
     }
     ]
   }
