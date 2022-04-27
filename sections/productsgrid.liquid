@@ -2,32 +2,33 @@
 <noscript>{{ 'component-productsgrid.css' | asset_url | stylesheet_tag }}</noscript>
 <script>
 
-    window.document.getElementById('component-productsgrid').addEventListener('click', function(e) {
-        if (e) {
-            e.preventDefault();
-            console.log('evento click ', e);
-        }
-    });
-
     let formData = {
         'items': [{
          'id': 41772295356605,
          'quantity': 2
          }]
        };
-       fetch(window.Shopify.routes.root + 'cart/add.js', {
-         method: 'POST',
-         headers: {
-           'Content-Type': 'application/json'
-         },
-         body: JSON.stringify(formData)
-       })
-       .then(response => {
-         return response.json();
-       })
-       .catch((error) => {
-         console.error('Error:', error);
-       });
+    
+    const addToCart=> (e) => {
+        e.preventDefault();
+        console.log('evento click ', e);
+        fetch(window.Shopify.routes.root + 'cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          })
+          .then(response => {
+            return response.json();
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          });
+    }  
+
+
+    window.document.getElementById('component-productsgrid').addEventListener('click', addToCart);
 
 </script>
 
