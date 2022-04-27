@@ -2,7 +2,25 @@
 <noscript>{{ 'component-productsgrid.css' | asset_url | stylesheet_tag }}</noscript>
 <script>
 
-    console.log("Hola Luis Cruz")
+    let formData = {
+        'items': [{
+         'id': 36110175633573,
+         'quantity': 2
+         }]
+       };
+       fetch(window.Shopify.routes.root + 'cart/add.js', {
+         method: 'POST',
+         headers: {
+           'Content-Type': 'application/json'
+         },
+         body: JSON.stringify(formData)
+       })
+       .then(response => {
+         return response.json();
+       })
+       .catch((error) => {
+         console.error('Error:', error);
+       });
 
 </script>
 
@@ -29,6 +47,7 @@
                     <input class="input_productgrid" type='radio' style="accent-color:{{ color }}" checked="checked"/>
                 {% endfor %}
             </div>
+            <h3>id: {{ product.variants.title | json }}</h3>
             <button class='button_productgrid'>Add to cart</button>
         </div>
     {% endfor %}
