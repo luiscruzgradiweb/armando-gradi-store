@@ -24,8 +24,12 @@
     cursor: pointer;
 }
 .container_input{
-    width:90%;
-    min-height:55px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items:center;
+    min-width:90%;
+    min-height:70px;
 }
 .input_productgrid{
     width: 50px;
