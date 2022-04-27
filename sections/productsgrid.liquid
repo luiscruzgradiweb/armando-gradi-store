@@ -20,8 +20,7 @@
                         assign color=tempColor | split: ":" | first 
                         assign position=tempColor.index0 
                     %}
-                    <input type='radio' style="background-color:{{ color }}"/>
-                    <h3>posicion: {{ position }}</h3> 
+                    <input type='radio' style="background:red"/>
                 {% endfor %}
             </div>
             <button class='button_productgrid'>Add to cart</button>
