@@ -16,10 +16,10 @@
             <h2>{{ tempPrice }}</h2>
             <div class="container_input">
                 {% for tempColor in colors %}
-                    <h3>{{ tempColor }}</h3>
                     {% liquid 
                         assign color=tempColor | split: ":" | last 
                     %}
+                    <h3>{{ color }}</h3>
                     <input class="input_productgrid" type='radio' style="accent-color:{{ color }}" checked="checked"/>
                 {% endfor %}
             </div>
