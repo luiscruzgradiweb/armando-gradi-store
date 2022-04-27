@@ -19,11 +19,10 @@
             {% endcapture %}
             
             {{ string_with_newlines | newline_to_br }} {% endcomment %}
-
-
             <h2>{{ tempPrice }}</h2>
             <div class="container_input">
                 {% for tempColor in colors %}
+                    <h1>{{ tempColor }}</h1>
                     {% liquid 
                         assign color=tempColor | split: ":" | first 
                     %}
