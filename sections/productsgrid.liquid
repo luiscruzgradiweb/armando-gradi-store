@@ -73,7 +73,7 @@
                 </quantity-input>
             </div>
             <button 
-                onclick=addToCart({{ product.variants[0].id }}, {{ 'products.product.quantity' }})
+                onclick=addToCart({{ product.variants[0].id }}, {{ 'products.product.quantity.decrease' | t: product: product.title | escape }})
                 class='button_productgrid'>
                 Add to cart
             </button>
