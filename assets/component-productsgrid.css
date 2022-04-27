@@ -30,4 +30,10 @@
     border: none;
     border-bottom: 1px solid black;
     margin-bottom: 10px;
+    cursor:pointer;
+}
+
+.input_productgrid:hover{
+    width: 55px;
+    height: 55px;
 }
