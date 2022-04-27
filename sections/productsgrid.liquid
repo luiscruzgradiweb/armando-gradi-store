@@ -55,7 +55,8 @@
                             assign variantColor=variant.option1  
                             assign colorCustomer=tempColor | split: ":" | first
                         %}
-                        {% if variantColor contains colorCustomer %}
+                       
+                        {% if colorCustomer contains variantColor %}
                             <input class="input_productgrid" type='radio' style="accent-color:{{ color }}" checked="checked"/>
                         {% endif %}
                     {% endfor %}
