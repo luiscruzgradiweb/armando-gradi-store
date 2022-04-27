@@ -2,8 +2,13 @@
 <noscript>{{ 'component-productsgrid.css' | asset_url | stylesheet_tag }}</noscript>
 <script>
 
-    
-    const addToCart= async (productID,quantity) => {
+    const quantity=15;
+
+    const increaseCounter=()=>{
+        quantity+=1
+    }
+
+    const addToCart= async (productID) => {
         let formData = {
             'items': [{
              'id': productID,
@@ -66,14 +71,14 @@
                         min="1"
                         value="1"
                       >
-                    <button class="quantity__button no-js-hidden" name="plus" type="button">
+                    <button class="quantity__button no-js-hidden" name="plus" type="button" onclick=increaseCounter()>
                       <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
                       {% render 'icon-plus' %}
                     </button>
                 </quantity-input>
             </div>
             <button 
-                onclick=addToCart({{ product.variants[0].id }}, {{ 'products.product.quantity.decrease' | t: product: product.title | escape }})
+                onclick=addToCart({{ product.variants[0].id }})
                 class='button_productgrid'>
                 Add to cart
             </button>
