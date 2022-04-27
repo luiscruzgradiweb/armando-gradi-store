@@ -19,6 +19,7 @@
             body: JSON.stringify(formData)
           })
           .then(response => {
+            window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
             return response.json();
           })
           .catch((error) => {
