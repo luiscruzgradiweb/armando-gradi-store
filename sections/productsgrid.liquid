@@ -98,18 +98,13 @@
 </div>
 
 <script>
-    document.getElementsByClassName("input_productgrid")
-    .forEach(function(element) {
-        element.addEventListener("onmouseover", function() {
-            alert("Hello");
-            /*document.getElementsByClassName("input_productgrid")
-            .forEach(function(element) {
-                element.style.backgroundColor = "white";
-            });
-            element.style.backgroundColor = element.style.accentColor;
-            */
-        });
-    });
+    let inputs = document.getElementsByClassName("input_productgrid")
+    for(item of inputs) {
+        item.addEventListener("onmouseover", function(e) {
+            alert("mouseover")
+        })
+    }
+
 </script>
 
 
