@@ -2,18 +2,18 @@
 <noscript>{{ 'component-productsgrid.css' | asset_url | stylesheet_tag }}</noscript>
 <script>
 
-    let formData = {
-        'items': [{
-         'id': 41772295356605,
-         'quantity': 2
-         }]
-       };
     
-    const addToCart= (e) => {
-        console.log('ok entramos', e);
-        {% comment %} e.preventDefault();
-        console.log('evento click ', e);
-        fetch(window.Shopify.routes.root + 'cart/add.js', {
+    const addToCart= async (productID) => {
+
+        let formData = {
+            'items': [{
+             'id': productID,
+             'quantity': 1
+             }]
+           };
+        
+
+        await fetch(window.Shopify.routes.root + 'cart/add.js', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -25,7 +25,7 @@
           })
           .catch((error) => {
             console.error('Error:', error);
-          }); {% endcomment %}
+          }); 
     }  
 
 </script>
