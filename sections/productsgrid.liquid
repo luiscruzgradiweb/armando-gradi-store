@@ -9,7 +9,7 @@
          }]
        };
     
-    const addToCart=> (e) => {
+    const addToCart= (e) => {
         e.preventDefault();
         console.log('evento click ', e);
         fetch(window.Shopify.routes.root + 'cart/add.js', {
