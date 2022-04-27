@@ -1,15 +1,6 @@
 <link rel="stylesheet" href="{{ 'component-productsgrid.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-productsgrid.css' | asset_url | stylesheet_tag }}</noscript>
 
-{%- style -%}
-
-    .color_{{ color }}-decoration{
-        color: #EAF714 ;
-    }
-
-{%- endstyle -%}
-
-
 {{ collections['coleccionprod'].handle | json }}
 <div class='productgrid_container'>
     {% for product in collections['coleccionprod'].products %}
@@ -23,10 +14,12 @@
             {% assign tempPrice=tempPrice | append: '€' %}
             {% assign colors=settings.colors_gradiproducts | split: "," %}
             <h2>{{ tempPrice }}</h2>
-            {% for tempColor in colors %}
-                {% assign color=tempColor | split: ":" | first %}
-                <h3 style="background-color:{{ color }}">{{color}}</h3>    
-            {% endfor %}
+            <div>
+                {% for tempColor in colors %}
+                    {% assign color=tempColor | split: ":" | first %}
+                    <input type='radio' style="background-color:{{ color }}">{{color}} />    
+                {% endfor %}
+            </div>
             <button class='button_productgrid'>Add to cart</button>
         </div>
     {% endfor %}
