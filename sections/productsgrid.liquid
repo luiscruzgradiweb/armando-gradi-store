@@ -53,9 +53,14 @@
                     {% for variant in product.variants %}
                         {% liquid 
                             assign variantColor=variant.option1  
-                            assign colorCustomer=tempColor | split: ":" | first 
+                            assign colorCustomer=tempColor | split: ":" | first
                         %}
-                        <h3>Variante: {{ variantColor }}: custom: {{ colorCustomer }}</h3>
+                        {% if colorCustomer == variantColor %}
+                            <h3>Variante: {{ variantColor }}: custom: {{ colorCustomer }}" iguales</h3>
+                        {% else %}   
+                            <h3>Variante: {{ variantColor }}: custom: {{ colorCustomer }}" diferentes</h3>
+                        {% endif %}
+                        
                         {% if variantColor == colorCustomer %}
                             <input class="input_productgrid" type='radio' style="accent-color:{{ color }}" checked="checked"/>
                         {% endif %}
