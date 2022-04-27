@@ -23,3 +23,11 @@
     color: white;
     cursor: pointer;
 }
+
+.input_productgrid{
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
