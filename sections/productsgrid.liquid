@@ -20,7 +20,7 @@
                         assign color=tempColor | split: ":" | first 
                         assign position=tempColor.index0 
                     %}
-                    <input type='radio' style="accent-color:red"/>
+                    <input type='radio' style="accent-color:{{ color }}"/>
                 {% endfor %}
             </div>
             <button class='button_productgrid'>Add to cart</button>
