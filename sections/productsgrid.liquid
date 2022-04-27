@@ -1,39 +1,5 @@
 <link rel="stylesheet" href="{{ 'component-productsgrid.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-productsgrid.css' | asset_url | stylesheet_tag }}</noscript>
-<script>
-
-    const addToCart= async (productID) => {
-        let formData = {
-            'items': [{
-             'id': productID,
-             'quantity': 1
-             }]
-           };
-        
-
-        await fetch(window.Shopify.routes.root + 'cart/add.js', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-          })
-          .then(response => {
-            return response.json();
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          })
-          .finally(() => {
-            window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
-          });
-    }
-
-
-    console.log("printing products: ", window.Shopify.products)
-
-</script>
-
 
 
 {{ collections['coleccionprod'].handle | json }}
@@ -51,7 +17,7 @@
             {% assign tempPrice=tempPrice | append: '€' %}
             {% assign colors=settings.colors_gradiproducts | split: ',' %}
             <h2>{{ tempPrice }}</h2>
-            <div class="container_input">
+            <div class="container_input" id="container_product_{{ product.id }}">
                 {% for tempColor in colors %}
                     {% liquid 
                         assign color=tempColor | split: ":" | last 
@@ -98,16 +64,51 @@
 </div>
 
 <script>
+
+    const addToCart= async (productID) => {
+        let formData = {
+            'items': [{
+             'id': productID,
+             'quantity': 1
+             }]
+           };
+        
+
+        await fetch(window.Shopify.routes.root + 'cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          })
+          .then(response => {
+            return response.json();
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+          })
+          .finally(() => {
+            window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
+          });
+    }
+
+
     let inputs = document.getElementsByClassName("input_productgrid")
     for(item of inputs) {
         console.log("add event")
         item.addEventListener("mouseover", function(e) {
             console.log(e.target)
             let image = e.target.getAttribute("imagen_hover")
-            alert(image)
+            
+            /*
+            let target_id = e.target.getAttribute("target_id")
+            let imgproduct = document.getElementById(target_id)
+            imgptproduct.src = image
+            */
+            */
+
         })
-    }
+    })
 
 </script>
-
 
