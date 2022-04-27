@@ -4,8 +4,8 @@
     "theme_name": "Dawn",
     "theme_version": "5.0.0",
     "theme_author": "Shopify",
-    "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
-    "theme_support_url": "https://support.shopify.com/"
+    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
     "name": "t:settings_schema.colors.name",
@@ -1151,8 +1151,8 @@
         "type": "textarea",
         "id": "colors_gradiproducts",
         "label": "Personalizar los colores",
-        "default": "Red: #ff0000<br/> Green: #00ff00<br/> Blue: #0000ff<br/>"
-    }
+        "default": "Red: #ff0000<br\/> Green: #00ff00<br\/> Blue: #0000ff<br\/>"
+      }
     ]
   }
 ]
