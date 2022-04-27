@@ -25,10 +25,10 @@
             %}
             {% assign price=price | append: '€' %}
             {% assign colors=settings.colors_gradiproducts | split: "," %}
-            {% for tempColor in colors %}
+            {% comment %} {% for tempColor in colors %}
                 {% assign color=tempColor | split: ":" | last %}
                 <h3 class="color_{{color}}">{{ color }}</h3>    
-            {% endfor %}
+            {% endfor %} {% endcomment %}
             <button class='button_productgrid'>Add to cart</button>
         </div>
     {% endfor %}
