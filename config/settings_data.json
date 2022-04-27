@@ -96,7 +96,7 @@
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "currency_code_enabled": true,
-    "colors_gradiproducts": "red: #ff0000,\ngreen: green,\nblue: blue,\nyellow: yellow,\ngray: #808080,\npurple:#581845",
+    "colors_gradiproducts": "red: #ff0000,\ngreen: green,\nblue: blue,\nyellow: yellow,\ngray: #808080,\npurple:#581845,\nblack: black,\norange: orange",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
