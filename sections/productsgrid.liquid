@@ -15,7 +15,7 @@
             <h2>{{ tempPrice }}</h2>
             {% assign colors=settings.colors_gradiproducts | split: "," %}}
             {% for color in colors %}
-                <h3>color</h3>
+                <h3>{{ color }}</h3>
                 {% comment %} {% if product.handle == color %}
                     <div class="color_container">
                         <div class="color_box" style="background-color: {{ color }}"></div>
