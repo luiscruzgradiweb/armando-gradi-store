@@ -56,9 +56,9 @@
                             assign colorCustomer=tempColor | split: ":" | first
                         %}
                         {% if colorCustomer == variantColor %}
-                            <h3>Variante: {{ variantColor }}: custom: {{ colorCustomer }}" iguales</h3>
+                            <h3>Variante: {{ variantColor }}: custom: {{ colorCustomer }} iguales</h3>
                         {% else %}   
-                            <h3>Variante: {{ variantColor }}: custom: {{ colorCustomer }}" diferentes</h3>
+                            <h3>Variante: {{ variantColor }}: custom: {{ colorCustomer }} diferentes</h3>
                         {% endif %}
                         
                         {% if variantColor == colorCustomer %}
