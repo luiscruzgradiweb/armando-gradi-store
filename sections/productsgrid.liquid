@@ -13,15 +13,10 @@
             {% assign tempPrice=product.price | divided_by: 100.00 | round: 2 %}
             {% assign tempPrice=tempPrice | append: '€' %}
             {% assign colors=settings.colors_gradiproducts | split: '<br />' %}
-            {% comment %} {% capture string_with_newlines %}
-                Hello
-                there
-            {% endcapture %}
-            
-            {{ string_with_newlines | newline_to_br }} {% endcomment %}
             <h2>{{ tempPrice }}</h2>
             <div class="container_input">
                 {% for tempColor in colors %}
+                    <h3>{{ tempColor }}</h3>
                     {% liquid 
                         assign color=tempColor | split: ":" | last 
                     %}
