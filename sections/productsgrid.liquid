@@ -4,7 +4,7 @@
 {%- style -%}
 
     .color_{{ color }} {
-        background-color: {{ color }};
+        color: {{ color }};
     }
 
 {%- endstyle -%}
@@ -28,8 +28,7 @@
                 <h3>{{ color }}</h3>
 
             {% endfor %}
-            <input type='radio' class="color_{{color}}" />
-            <h3>{{ settings.colors_gradiproducts }}</h3>
+            <h3 class="color_{{color}}">{{ settings.colors_gradiproducts }}</h3>
             <button class='button_productgrid'>Add to cart</button>
         </div>
     {% endfor %}
