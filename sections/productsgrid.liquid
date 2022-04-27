@@ -10,7 +10,8 @@
        };
     
     const addToCart= (e) => {
-        e.preventDefault();
+        console.log('ok entramos');
+        {% comment %} e.preventDefault();
         console.log('evento click ', e);
         fetch(window.Shopify.routes.root + 'cart/add.js', {
             method: 'POST',
@@ -24,11 +25,11 @@
           })
           .catch((error) => {
             console.error('Error:', error);
-          });
+          }); {% endcomment %}
     }  
 
 
-    document.getElementById('btn_add_to_cart').addEventListener('click', addToCart);
+    window.document.getElementById('btn_add_to_cart').addEventListener('click', addToCart);
 
 </script>
 
