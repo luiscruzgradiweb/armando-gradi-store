@@ -18,7 +18,6 @@
                 {% for tempColor in colors %}
                     {% liquid 
                         assign color=tempColor | split: ":" | first 
-                        assign position=tempColor.index0 
                     %}
                     <input type='radio' style="accent-color:{{ color }}"/>
                 {% endfor %}
