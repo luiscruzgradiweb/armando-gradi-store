@@ -10,7 +10,8 @@
                 <img src="{{ image | image_url: width: 300 }}" alt="{{ product.title }}" loading='lazy' width=300 height=300/>
               {% endfor %} {% endcomment %}
             <img src="{{ product.images | first | image_url: width: 300 }}" alt="{{ product.title }}" loading='lazy' width=300 height=300/>
-            <h2>{{ product.price }}</h2>
+            {% assign tempPrice=product.price %}
+            <h2>{{ tempPrice }}</h2>
             <button class='button_productgrid'>Add to cart</button>
         </div>
     {% endfor %}
