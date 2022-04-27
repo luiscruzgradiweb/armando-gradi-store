@@ -3,12 +3,11 @@
 <script>
 
     
-    const addToCart= async (productID) => {
-
+    const addToCart= async (productID,quantity) => {
         let formData = {
             'items': [{
              'id': productID,
-             'quantity': 1
+             'quantity': quantity
              }]
            };
         
@@ -74,7 +73,7 @@
                 </quantity-input>
             </div>
             <button 
-                onclick=addToCart({{ product.variants[0].id }}) 
+                onclick=addToCart({{ product.variants[0].id }}, {{ 'products.product.quantity.increase' | t: product: product.title | escape }})
                 class='button_productgrid'>
                 Add to cart
             </button>
