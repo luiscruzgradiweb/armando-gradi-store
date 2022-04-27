@@ -1143,5 +1143,16 @@
         "default": true
       }
     ]
+  },
+  {
+    "name": "colors_gradiproducts.name ",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "colors_gradiproducts",
+        "label": "Welcome message",
+        "default": "Welcome to my shop!"
+    }
+    ]
   }
 ]
