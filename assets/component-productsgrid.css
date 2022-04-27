@@ -31,6 +31,15 @@
     min-width:90%;
     min-height:70px;
 }
+
+.container_quantity{
+    width:100%;
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
 .input_productgrid{
     width: 50px;
     height: 50px;
