@@ -50,6 +50,7 @@
                     {% liquid 
                         assign color=tempColor | split: ":" | last 
                     %}
+                    <h1>{{product.variants[0]}}</h1>
                     <input class="input_productgrid" type='radio' style="accent-color:{{ color }}" checked="checked"/>
                 {% endfor %}
             </div>
