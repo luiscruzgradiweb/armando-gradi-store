@@ -1151,7 +1151,7 @@
         "type": "textarea",
         "id": "colors_gradiproducts",
         "label": "Welcome message",
-        "default": "Welcome to my shop!"
+        "default": "Red: #ff0000, Green: #00ff00, Blue: #0000ff"
     }
     ]
   }
