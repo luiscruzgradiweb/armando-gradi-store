@@ -67,7 +67,8 @@
                 </quantity-input>
             </div>
             <button 
-                productSelected="{{ product.variants | first | json }}"
+                productSelected="{{ product.variants | json }}"
+                id='{{ product.id }}'
                 class='button_productgrid'>
                 Add to cart
             </button>
