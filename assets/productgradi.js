@@ -4,10 +4,7 @@ let products={
 };
 
 const updateProduct=(variant)=>{
-    products={
-        id:variant.id,
-        quantity:1,
-    }
+    products.id=variant.id
 }
 
 const updateQuantity=(quantity)=>{
@@ -23,7 +20,7 @@ const addToCart= (button) => {
     fetch(window.Shopify.routes.root + 'cart/add.js', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json' 
         },
         body: JSON.stringify(products)
       })
