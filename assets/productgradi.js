@@ -9,7 +9,7 @@ const updateProuct=(variant)=>{
     return products;
 }
 
-const addToCart= () => {
+const addToCart= (button) => {
 
     const products={
         id:undefined,
@@ -17,7 +17,8 @@ const addToCart= () => {
     };
 
     updateProuct(products)
-    alert('Hello world');
+    alert(button.id)
+
        
     // await fetch(window.Shopify.routes.root + 'cart/add.js', {
     //     method: 'POST',
