@@ -44,6 +44,9 @@
     width: 25px;
     height: 25px;
     border: none;
+    accent-color: gray;
+    margin:0;
+    padding:0;
     /* border-bottom: 1px solid black; */
     /* margin-bottom: 10px; */
     cursor:pointer;
