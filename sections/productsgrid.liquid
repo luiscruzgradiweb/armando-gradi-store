@@ -41,7 +41,7 @@
                 
                         <div>
                             {% for value in product_option.values %}
-                                <h3>{{ forloop.index }}</h3>
+                                <h3>product.variant[{{ forloop.index }}]</h3>
                                 <label for="{{ value | handle }}" class="color_{{ value | handle }}">
                                     <input
                                         id="{{ variant.id }}"
