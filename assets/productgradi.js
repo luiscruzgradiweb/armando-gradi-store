@@ -7,7 +7,7 @@ const updateProduct=(variant)=>{
     console.log('antes',products)
     products={
         id:variant.id,
-        quantity:variant.quantity,
+        quantity:1,
     }
 
     console.log('despues',products)
