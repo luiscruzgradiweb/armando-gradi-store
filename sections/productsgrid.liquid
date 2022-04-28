@@ -95,17 +95,14 @@
 
     let inputs = document.getElementsByClassName("input_productgrid")
     for(item of inputs) {
-        console.log("add event")
         item.addEventListener("mouseover", function(e) {
-            console.log(e.target)
             let image = e.target.getAttribute("imagen_hover")
             
-            /*
-            let target_id = e.target.getAttribute("target_id")
+
+            {% comment %} let target_id = e.target.getAttribute("target_id")
             let imgproduct = document.getElementById(target_id)
-            imgptproduct.src = image
-            */
-            */
+            imgptproduct.src = image {% endcomment %}
+
 
         })
     })
