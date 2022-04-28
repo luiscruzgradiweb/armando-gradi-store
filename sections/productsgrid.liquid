@@ -52,7 +52,7 @@
                                 style="accent-color:{{ color }}"
                                 {% if product_option.selected_value == value %}checked{% endif %}
                             />
-                            <label for="{{ value | handle }}" style='background:{{calue}}' class="color_{{ value | handle }}"></label>
+                            <label for="{{ value | handle }}" class="color_{{ value | handle }}"></label>
                         {% endfor %}
                         </div>
                     {% endif %}
