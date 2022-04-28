@@ -12,7 +12,7 @@
               {% endfor %} {% endcomment %}
 
             <a href="{{ product.url }}">
-                <img id="product_image-{{ product.url }}" defaultImage="{{ product.images | first | image_url: width: 300 }}" src="{{ product.images | first | image_url: width: 300 }}" alt="{{ product.title }}" loading='lazy' width=300 height=300/>
+                <img id="product_image-{{ product.url }}"  src="{{ product.images | first | image_url: width: 300 }}" alt="{{ product.title }}" loading='lazy' width=300 height=300/>
             </a>  
             {% assign tempPrice=product.price | divided_by: 100.00 | round: 2 %}
             {% assign tempPrice=tempPrice | append: '€' %}
@@ -30,7 +30,14 @@
                         %}
                        
                         {% if colorCustomer contains variantColor %}
-                            <input class="input_productgrid" type='radio' idImageProd="product_image-{{ product.url }}"  image_hover="https://cdn.shopify.com//s//files//1//0617//5093//5741//products//blanco.webp?v=1650991995" style="accent-color:{{ color }}" checked="checked"/>
+                            <input class="input_productgrid" 
+                                type='radio'
+                                defaultImage="{{ product.images | first | image_url: width: 300 }}"
+                                idImageProd="product_image-{{ product.url }}"  
+                                image_hover="https://cdn.shopify.com//s//files//1//0617//5093//5741//products//blanco.webp?v=1650991995" 
+                                style="accent-color:{{ color }}" 
+                                checked="checked"
+                            />
                         {% endif %}
                     {% endfor %}
                 {% endfor %}
@@ -105,7 +112,7 @@
         })
 
         item.addEventListener("mouseout", function(e) {
-            let image = e.target.getAttribute("image_hover")
+            let image = e.target.getAttribute("defaultImage")
             let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
             imageProduct.setAttribute("src", image)
             
