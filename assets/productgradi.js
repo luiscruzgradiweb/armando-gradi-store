@@ -1,4 +1,7 @@
-
+const products={
+    id:undefined,
+    quantity:1,
+};
 
 const updateProuct=(variant)=>{
     products={
@@ -9,15 +12,8 @@ const updateProuct=(variant)=>{
     return products;
 }
 
-const addToCart= (button) => {
-
-    const products={
-        id:undefined,
-        quantity:0,
-    };
-
-    updateProuct(products)
-    alert(button.id)
+const addToCart= () => {
+    alert(products.id)
 
        
     // await fetch(window.Shopify.routes.root + 'cart/add.js', {

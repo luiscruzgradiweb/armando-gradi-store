@@ -38,13 +38,11 @@
                         {% if colorCustomer contains variantColor %}
                             <input class="input_productgrid"
                                 id="{{ variant.id }}"
+                                onchange=upadupdateProuct(this)
                                 type='radio'
                                 idImageProd="product_image-{{ product.url }}"  
                                 image_hover="{{ variant | image_url }}" 
                                 style="accent-color:{{ color }}" 
-                                
-                                variant={{ variant | json}}
-                                idProduct={{ product.id }}
                             />
                         {% endif %}
                     {% endfor %}
@@ -71,7 +69,6 @@
             </div>
             <button
                 onclick=addToCart(this)
-                id='Ernesto-perez-{{ product.id }}'
                 class='button_productgrid'>
                 Add to cart
             </button>
