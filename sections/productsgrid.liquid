@@ -30,7 +30,19 @@
                 <style>
                     {%- for color in colors_list -%}
                       {%- assign css = color | split: '|' -%}
-                      .color_{{ css[0] | handle }} { background: {{ css[1] }} }
+                      .color_{{ css[0] | handle }} { 
+                        content: " ";
+                        display: inline-block;
+                        position: relative;
+                        top: 5px;
+                        margin: 0 5px 0 0;
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 11px;
+                        border: 2px solid {{ css[1] }};
+                        background-color: transparent;
+                          
+                    }
                       {%- comment -%}In this example I'm using background, you can use whatever you want{%- endcomment -%}
                     {%- endfor -%}
                 </style>
