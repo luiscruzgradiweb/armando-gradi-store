@@ -96,6 +96,7 @@
     let inputs = document.getElementsByClassName("input_productgrid")
     for(item of inputs) {
         item.addEventListener("mouseover", function(e) {
+            alert("event ", e)
             let image = e.target.getAttribute("imagen_hover")
             
 
