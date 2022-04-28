@@ -30,12 +30,11 @@
                         %}
                        
                         {% if colorCustomer contains variantColor %}
-                            <h3>{{ variant | image_url }}</h3>
                             <input class="input_productgrid" 
                                 type='radio'
                                 defaultImage="{{ product.images | first | image_url: width: 300 }}"
                                 idImageProd="product_image-{{ variant.id }}"  
-                                image_hover="{{ variant.featured_image | json | replace: "\", "" }}" 
+                                image_hover="{{ variant | image_url }}" 
                                 style="accent-color:{{ color }}" 
                                 checked="checked"
                             />
