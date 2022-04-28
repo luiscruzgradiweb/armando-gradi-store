@@ -70,7 +70,7 @@
                 </quantity-input>
             </div>
             <button 
-                id='{{ product.id }}'
+                id="{{ product.id }}"
                 currentVariant='null'
                 class='button_productgrid'>
                 Add to cart
@@ -116,8 +116,7 @@
     const buttonsAdd=document.getElementsByClassName('button_productgrid')
     for(button of buttonsAdd){
         button.addEventListener('click',function(e){
-            e.preventDefault()
-            let variant=e.target.getAttribute('variant')
+            let variant=e.target.getAttribute('currentVariant');
 
             console.log(variant)
         })
