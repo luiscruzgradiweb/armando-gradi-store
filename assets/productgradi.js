@@ -10,7 +10,15 @@ const updateProduct=(variant)=>{
     }
 }
 
-const addToCart= () => {
+const updateQuantity=(quantity)=>{
+    products.quantity=quantity;
+}
+
+const addToCart= (button) => {
+    
+    const idInput= document.getElementById(button.id);
+    const quantity=document.getElementById(`quantity__input-${idInput}`).value
+    updateQuantity(quantity);
 
     fetch(window.Shopify.routes.root + 'cart/add.js', {
         method: 'POST',
@@ -29,7 +37,6 @@ const addToCart= () => {
         window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
       }); 
 }
-
 
 
 const buttonsAdd=document.getElementsByClassName('button_productgrid')

@@ -7,10 +7,6 @@
     {% for product in collections['coleccionprod'].products %}
         <div class='product_container'>
             <h3>{{ product.title }}</h3>
-            {% comment %} {% for image in product.images %}
-                <img src="{{ image | image_url: width: 300 }}" alt="{{ product.title }}" loading='lazy' width=300 height=300/>
-              {% endfor %} {% endcomment %}
-
             <a href="{{ product.url }}">
                 <img id="product_image-{{ product.url }}"  
                     src="{{ product.images | first | image_url: width: 300 }}" 
@@ -42,7 +38,7 @@
                                 type='radio'
                                 idImageProd="product_image-{{ product.url }}"  
                                 image_hover="{{ variant | image_url }}" 
-                                style="accent-color:{{ color }}" 
+                                style="accent-color:{{ color }}"
                             />
                         {% endif %}
                     {% endfor %}
@@ -57,7 +53,7 @@
                     <input class="quantity__input"
                         type="number"
                         name="quantity"
-                        id="Quantity-{{ section.id }}"
+                        id="quantity__input-{{ product.id }}"
                         min="1"
                         value="1"
                       >
@@ -69,6 +65,7 @@
             </div>
             <button
                 onclick=addToCart(this)
+                id="{{ product.id }}"
                 class='button_productgrid'>
                 Add to cart
             </button>
