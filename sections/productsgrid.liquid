@@ -121,6 +121,7 @@
             let image = e.target.getAttribute("image_hover")
             let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
             imageProduct.setAttribute("src", image)
+            e.target.setAttribute("src", image)
             
         })
 
