@@ -4,35 +4,30 @@ let products={
 };
 
 const updateProduct=(variant)=>{
-    console.log('antes',products)
     products={
         id:variant.id,
         quantity:1,
     }
-
-    console.log('despues',products)
 }
 
 const addToCart= () => {
-    alert(products.id)
 
-       
-    // await fetch(window.Shopify.routes.root + 'cart/add.js', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(formData)
-    //   })
-    //   .then(response => {
-    //     return response.json();
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error:', error);
-    //   })
-    //   .finally(() => {
-    //     window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
-    //   }); 
+    await fetch(window.Shopify.routes.root + 'cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(products)
+      })
+      .then(response => {
+        return response.json();
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      })
+      .finally(() => {
+        window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
+      }); 
 }
 
 
