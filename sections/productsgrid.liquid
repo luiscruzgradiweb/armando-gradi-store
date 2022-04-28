@@ -78,15 +78,18 @@
 
 <script>
 
-    const addToCart= async (productID) => {
+    const products=[];
+
+    const addToCart= async () => {
         let formData = {
             'items': [{
              'id': productID,
              'quantity': 1
              }]
            };
-        
-           console.log('hola mundo');
+           products.push(formData);
+           console.log('Productos: ',products);
+           
         {% comment %} await fetch(window.Shopify.routes.root + 'cart/add.js', {
             method: 'POST',
             headers: {
@@ -104,6 +107,8 @@
             window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
           }); {% endcomment %}
     }
+
+    
 {% comment %} 
     const buttonsAdd=document.getElementsByClassName('button_productgrid')
     for(button of buttonsAdd){
