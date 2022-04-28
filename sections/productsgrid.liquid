@@ -31,7 +31,7 @@
                     {%- for color in colors_list -%}
                       {%- assign css = color | split: '|' -%}
                       .color_{{ css[0] | handle }} { 
-                        accent-color:{{ css[1]}} 
+                        accent-color:{{ css[1]}};
                         width:20px;
                         height:20px;
                     }
