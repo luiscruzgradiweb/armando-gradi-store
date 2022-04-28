@@ -33,8 +33,8 @@
                             <input class="input_productgrid" 
                                 type='radio'
                                 defaultImage="{{ product.images | first | image_url: width: 300 }}"
-                                idImageProd="product_image-{{ product.url }}"  
-                                image_hover="https://cdn.shopify.com/s/files/1/0617/5093/5741/products/caramelo.webp?v=1650991846" 
+                                idImageProd="product_image-{{ variant.id }}"  
+                                image_hover="{{ variant.images | first | image_url: width: 300 }}" 
                                 style="accent-color:{{ color }}" 
                                 checked="checked"
                             />
