@@ -57,8 +57,8 @@
                                         idImageProd="product_image-{{ product.url }}"  
                                         image_hover="{{ variant | image_url }}"
                                         {% if product_option.selected_value == value %}checked{% endif %}
-                                    >
-                                    <label for="{{ value | handle }}" class="color_{{ value | handle }}"
+                                    />
+                                    <label for="{{ value | handle }}" class="color_{{ value | handle }} input_productgrid"
                                         id="{{ variant.id }}"
                                         onchange=updateProduct(this)
                                         type='radio'

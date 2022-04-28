@@ -80,6 +80,7 @@
       -ms-user-select: none;
       user-select: none;
       border-radius: 50%;
+      border: 1px solid black;
   }
   input.input_productgrid:checked ~ label:before {
       content:'';
