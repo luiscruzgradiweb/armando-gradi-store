@@ -67,7 +67,7 @@
                 </quantity-input>
             </div>
             <button 
-                onclick=addToCart({{ product.variants | json }})
+                onclick=addToCart('{{ product.variants | json }}')
                 id='{{ product.id }}'
                 class='button_productgrid'>
                 Add to cart
