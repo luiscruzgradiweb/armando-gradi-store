@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="{{ 'component-productsgrid.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-productsgrid.css' | asset_url | stylesheet_tag }}</noscript>
-
+<script src="{{ 'productgradi.js' | asset_url }}" defer="defer"></script>
 
 {{ collections['coleccionprod'].handle | json }}
 <div class='productgrid_container'>
@@ -42,7 +42,7 @@
                                 idImageProd="product_image-{{ product.url }}"  
                                 image_hover="{{ variant | image_url }}" 
                                 style="accent-color:{{ color }}" 
-                                checked="checked"
+                                
                                 variant={{ variant | json}}
                                 idProduct={{ product.id }}
                             />
@@ -79,80 +79,4 @@
     {% endfor %}
 </div>
 
-<script>
-
-    const products=[];
-
-    const addToCart= () => {
-        let formData = {
-            'items': [{
-             'id': 1,
-             'quantity': 1
-             }]
-           };
-           products.push(formData);
-           console.log('Productos: ',products);
-           
-        {% comment %} await fetch(window.Shopify.routes.root + 'cart/add.js', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-          })
-          .then(response => {
-            return response.json();
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-          })
-          .finally(() => {
-            window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
-          }); {% endcomment %}
-    }
-
-    
-
-    const buttonsAdd=document.getElementsByClassName('button_productgrid')
-    for(button of buttonsAdd){
-        button.addEventListener('click',function(e){
-            let variant=e.target.getAttribute('currentVariant');
-
-            console.log(variant)
-        })
-    } 
-
-    let inputs = document.getElementsByClassName("input_productgrid")
-    for(item of inputs) {
-        item.addEventListener("mouseover", function(e) {
-            
-            let image = e.target.getAttribute("image_hover")
-            let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
-            imageProduct.setAttribute("src", image)
-            
-        })
-
-        item.addEventListener("mouseout", function(e) {
-            let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
-            let image = imageProduct.getAttribute("defaultImage")
-            imageProduct.setAttribute("src", image)
-            
-        })
-
-        item.addEventListener("click", function(e) {
-            let image = e.target.getAttribute("image_hover")
-            let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
-            let variant = e.target.getAttribute("variant")
-            let idProduct = e.target.getAttribute("idProduct")
-            let button=document.getElementById(idProduct)
-            imageProduct.setAttribute("src", image)
-            imageProduct.setAttribute("defaultImage", image)
-            button.setAttribute("currentVariant", variant)
-            
-        })
-
-
-    }
-
-</script>
 
