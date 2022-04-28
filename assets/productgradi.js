@@ -13,8 +13,7 @@ const updateQuantity=(quantity)=>{
 
 const addToCart= (button) => {
     
-    const idInput= document.getElementById(button.id);
-    const quantity=document.getElementById(`quantity__input-${idInput}`)
+    const quantity=document.getElementById(`quantity__input-${button.id}`)
     alert(quantity + " " + button.id)
     updateQuantity(quantity);
 
