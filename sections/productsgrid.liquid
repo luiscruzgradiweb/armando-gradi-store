@@ -43,8 +43,8 @@
                                 image_hover="{{ variant | image_url }}" 
                                 style="accent-color:{{ color }}" 
                                 checked="checked"
-                                variant="{{ variant | json}}"
-                                idProduct="{{ product.id }}"
+                                variant={{ variant | json}}
+                                idProduct={{ product.id }}
                             />
                         {% endif %}
                     {% endfor %}
@@ -70,7 +70,7 @@
                 </quantity-input>
             </div>
             <button 
-                id="{{ product.id }}"
+                id={{ product.id }}
                 currentVariant='null'
                 class='button_productgrid'>
                 Add to cart
