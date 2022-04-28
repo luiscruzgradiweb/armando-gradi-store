@@ -41,7 +41,6 @@
                 
                         <div>
                         {% for value in product_option.values %}
-                            <h3>{{product_option | json}}</h3>
                             <input
                                 id="{{ variant.id }}"
                                 onchange=updateProduct(this)
