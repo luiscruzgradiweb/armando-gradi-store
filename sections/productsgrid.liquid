@@ -67,7 +67,7 @@
                 </quantity-input>
             </div>
             <button 
-                onclick=addToCart('{{ product.variants | json }}')
+                onclick=addToCart()
                 id='{{ product.id }}'
                 class='button_productgrid'>
                 Add to cart
@@ -86,7 +86,7 @@
              }]
            };
         
-           console.log(productID);
+           console.log('hola mundo');
         {% comment %} await fetch(window.Shopify.routes.root + 'cart/add.js', {
             method: 'POST',
             headers: {
