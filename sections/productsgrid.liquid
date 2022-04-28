@@ -30,7 +30,11 @@
                 <style>
                     {%- for color in colors_list -%}
                       {%- assign css = color | split: '|' -%}
-                      .color_{{ css[0] | handle }} { accent-color:{{ css[1] }} }
+                      .color_{{ css[0] | handle }} { 
+                        accent-color:{{ css[1]}} 
+                        width:20px;
+                        height:20px;
+                    }
                       {%- comment -%}In this example I'm using background, you can use whatever you want{%- endcomment -%}
                     {%- endfor -%}
                 </style>
