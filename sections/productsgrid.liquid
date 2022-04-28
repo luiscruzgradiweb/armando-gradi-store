@@ -40,6 +40,7 @@
                 
                         <div>
                         {% for value in product_option.values %}
+                            <h3>{{product_option.values}}</h3>
                             <input class="input_productgrid"
                                 id="{{ variant.id }}"
                                 onchange=updateProduct(this)
