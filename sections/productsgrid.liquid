@@ -41,8 +41,8 @@
                 
                         <div>
                             {% for value in product_option.values %}
-                                {% assign position=forloop.index %}
-                                <h3>{{product.variant[{{ position }}]}}</h3>
+                                {% assign position=product.variants[forloop.index] %}
+                                <h3>{{ position | json}}</h3>
                                 <label for="{{ value | handle }}" class="color_{{ value | handle }}">
                                     <input
                                         id="{{ variant.id }}"
