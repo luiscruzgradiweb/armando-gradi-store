@@ -31,17 +31,7 @@
                     {%- for color in colors_list -%}
                       {%- assign css = color | split: '|' -%}
                       .color_{{ css[0] | handle }} { 
-                        content: " ";
-                        display: inline-block;
-                        position: relative;
-                        top: 5px;
-                        margin: 0 5px 0 0;
-                        width: 25px;
-                        height: 25px;
-                        border-radius: 11px;
-                        border: 2px solid {{ css[1] }};
-                        background-color: transparent;
-                          
+                        background-color: {{ css[1] }};                         
                     }
                       {%- comment -%}In this example I'm using background, you can use whatever you want{%- endcomment -%}
                     {%- endfor -%}
@@ -51,7 +41,7 @@
                 
                     {% if product_option.name == 'Color' or product_option.name == 'Colour' %}
                 
-                        <div >
+                        <div  id="color" class="wrapper">
                             {% for value in product_option.values %}
 
                                 {% liquid
@@ -68,7 +58,15 @@
                                         image_hover="{{ variant | image_url }}"
                                         {% if product_option.selected_value == value %}checked{% endif %}
                                     >
-                                    <label for="{{ value | handle }}" class="color_{{ value | handle }}">&nbsp;</label>
+                                    <label for="{{ value | handle }}" class="color_{{ value | handle }}"
+                                        id="{{ variant.id }}"
+                                        onchange=updateProduct(this)
+                                        type='radio'
+                                        value="{{ value | handle }}"
+                                        idImageProd="product_image-{{ product.url }}"  
+                                        image_hover="{{ variant | image_url }}"
+                                        {% if product_option.selected_value == value %}checked{% endif %}
+                                    >&nbsp;</label>
                         {% endfor %}
                         </div>
                     {% endif %}
