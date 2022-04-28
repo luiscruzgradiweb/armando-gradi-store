@@ -52,7 +52,7 @@
     cursor:pointer;
 }
 
-.input::before{
+.input_productgrid::before{
     content: "";
     width: 25px;
     height: 25px;
