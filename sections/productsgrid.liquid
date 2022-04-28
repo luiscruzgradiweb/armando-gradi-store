@@ -40,18 +40,18 @@
                     {% if product_option.name == 'Color' or product_option.name == 'Colour' %}
                 
                         <div>
-                        {% for value in product_option.values %}
-                            <input
-                                id="{{ variant.id }}"
-                                onchange=updateProduct(this)
-                                type='radio'
-                                value="{{ value | handle }}"
-                                idImageProd="product_image-{{ product.url }}"  
-                                image_hover="{{ variant | image_url }}" 
-                                class="color_{{ value | handle }}"
-                                {% if product_option.selected_value == value %}checked{% endif %}
-                            >
-                            <label for="{{ value | handle }}" class="color_{{ value | handle }}"></label>
+                            {% for value in product_option.values %}
+                                <label for="{{ value | handle }}" class="color_{{ value | handle }}">
+                                    <input
+                                        id="{{ variant.id }}"
+                                        onchange=updateProduct(this)
+                                        type='radio'
+                                        value="{{ value | handle }}"
+                                        idImageProd="product_image-{{ product.url }}"  
+                                        image_hover="{{ variant | image_url }}"
+                                        {% if product_option.selected_value == value %}checked{% endif %}
+                                    >
+                                </label>
                         {% endfor %}
                         </div>
                     {% endif %}
