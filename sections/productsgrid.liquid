@@ -30,6 +30,7 @@
                         %}
                        
                         {% if colorCustomer contains variantColor %}
+                            <h3>url: {{ variant }}</h3>
                             <input class="input_productgrid" 
                                 type='radio'
                                 defaultImage="{{ product.images | first | image_url: width: 300 }}"
@@ -42,7 +43,6 @@
                     {% endfor %}
                 {% endfor %}
             </div>
-            <h3>id: {{ product | json }}</h3>
             <div class="container_quantity">
                 <quantity-input class="quantity">
                     <button class="quantity__button no-js-hidden" name="minus" type="button">
