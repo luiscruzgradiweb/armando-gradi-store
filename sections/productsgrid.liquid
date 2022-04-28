@@ -34,7 +34,7 @@
                                 type='radio'
                                 defaultImage="{{ product.images | first | image_url: width: 300 }}"
                                 idImageProd="product_image-{{ product.url }}"  
-                                image_hover="{{ variant.featured_media.preview_image.src }}" 
+                                image_hover="{{ variant.featured_image.src }}" 
                                 style="accent-color:{{ color }}" 
                                 checked="checked"
                             />
