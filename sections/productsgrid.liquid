@@ -42,17 +42,14 @@
                         <div>
                         {% for value in product_option.values %}
                             <h3>{{product_option | json}}</h3>
-                            <input class="input_productgrid"
+                            <input
                                 id="{{ variant.id }}"
                                 onchange=updateProduct(this)
                                 type='radio'
                                 value="{{ value | handle }}"
                                 idImageProd="product_image-{{ product.url }}"  
                                 image_hover="{{ variant | image_url }}" 
-                                style="color_{{ value | handle }}"
-                                {% if value == product_option.selected_value %}
-                                    checked
-                                {% endif %}
+                                class="color_{{ value | handle }}"
                                 {% if product_option.selected_value == value %}checked{% endif %}
                             />
                             <label for="{{ value | handle }}" class="color_{{ value | handle }}">valor : {{value}} selected {{product_option.selected_value}}</label>
