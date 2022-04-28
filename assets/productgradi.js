@@ -4,12 +4,13 @@ const products={
 };
 
 const updateProduct=(variant)=>{
+    console.log('antes',products)
     products={
         id:variant.id,
         quantity:variant.quantity,
     }
 
-    return products;
+    console.log('despues',products)
 }
 
 const addToCart= () => {
