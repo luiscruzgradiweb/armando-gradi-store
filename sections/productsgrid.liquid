@@ -67,7 +67,7 @@
                 </quantity-input>
             </div>
             <button 
-                onclick=addToCart({{ product.variants[0].id }})
+                onclick=addToCart({{ product.variants | first | json }})
                 class='button_productgrid'>
                 Add to cart
             </button>
@@ -85,8 +85,8 @@
              }]
            };
         
-
-        await fetch(window.Shopify.routes.root + 'cart/add.js', {
+           console.log(productID);
+        {% comment %} await fetch(window.Shopify.routes.root + 'cart/add.js', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -101,7 +101,7 @@
           })
           .finally(() => {
             window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
-          });
+          }); {% endcomment %}
     }
 
     let inputs = document.getElementsByClassName("input_productgrid")
