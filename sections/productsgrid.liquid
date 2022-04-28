@@ -43,7 +43,7 @@
                                 image_hover="{{ variant | image_url }}" 
                                 style="accent-color:{{ color }}" 
                                 checked="checked"
-                                variant="{{ variant }}"
+                                variant="{{ variant | json}}"
                                 idProduct="{{ product.id }}"
                             />
                         {% endif %}
