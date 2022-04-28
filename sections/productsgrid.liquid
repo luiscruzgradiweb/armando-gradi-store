@@ -46,7 +46,6 @@
                                     assign currentPosition=forloop.index | minus: 1
                                     assign variant=product.variants[currentPosition] 
                                 %}
-                                <label for="{{ value | handle }}" class="color_{{ value | handle }}">
                                     <input
                                         class="input_productgrid"
                                         id="{{ variant.id }}"
@@ -57,7 +56,7 @@
                                         image_hover="{{ variant | image_url }}"
                                         {% if product_option.selected_value == value %}checked{% endif %}
                                     >
-                                </label>
+                                    <label for="{{ value | handle }}" class="color_{{ value | handle }}">&nbsp;</label>
                         {% endfor %}
                         </div>
                     {% endif %}

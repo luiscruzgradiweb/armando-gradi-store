@@ -41,9 +41,9 @@ const addToCart= (button) => {
 
 
 const buttonsAdd=document.getElementsByClassName('button_productgrid')
-    for(button of buttonsAdd){
-        button.addEventListener('click', addToCart)
-    } 
+for(button of buttonsAdd){
+    button.addEventListener('click', addToCart)
+} 
 
 let inputs = document.getElementsByClassName("input_productgrid")
 for(item of inputs) {
