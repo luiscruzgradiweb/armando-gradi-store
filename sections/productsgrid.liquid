@@ -18,7 +18,6 @@
                     width=300 
                     height=300
                     defaultImage="{{ product.images | first | image_url: width: 300 }}"
-                    currentVariant="null"
                 />
             </a>  
             {% assign tempPrice=product.price | divided_by: 100.00 | round: 2 %}
@@ -45,6 +44,7 @@
                                 style="accent-color:{{ color }}" 
                                 checked="checked"
                                 variant="{{ variant }}"
+                                idProduct="{{ product.id }}"
                             />
                         {% endif %}
                     {% endfor %}
@@ -71,7 +71,7 @@
             </div>
             <button 
                 id='{{ product.id }}'
-                idImage="product_image-{{ product.url }}"
+                currentVariant='null'
                 class='button_productgrid'>
                 Add to cart
             </button>
@@ -117,8 +117,7 @@
     for(button of buttonsAdd){
         button.addEventListener('click',function(e){
             e.preventDefault()
-            let product=e.target.getAttribute('id')
-            let variant=product.getAttribute('variant')
+            let variant=e.target.getAttribute('variant')
 
             console.log(variant)
         })
@@ -144,10 +143,12 @@
         item.addEventListener("click", function(e) {
             let image = e.target.getAttribute("image_hover")
             let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
+            let variant = e.target.getAttribute("variant")
+            let idProduct = e.target.getAttribute("idProduct")
+            let button=document.getElementById(idProduct)
             imageProduct.setAttribute("src", image)
             imageProduct.setAttribute("defaultImage", image)
-            let variant = e.target.getAttribute("variant")
-            imageProduct.setAttribute("currentVariant", variant)
+            button.setAttribute("currentVariant", variant)
             
         })
 
