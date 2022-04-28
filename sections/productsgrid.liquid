@@ -51,7 +51,7 @@
                 
                     {% if product_option.name == 'Color' or product_option.name == 'Colour' %}
                 
-                        <div>
+                        <div  id="color" class="wrapper">
                             {% for value in product_option.values %}
 
                                 {% liquid
@@ -68,7 +68,19 @@
                                         image_hover="{{ variant | image_url }}"
                                         {% if product_option.selected_value == value %}checked{% endif %}
                                     >
-                                    <label for="{{ value | handle }}" class="color_{{ value | handle }}">&nbsp;</label>
+                                    <label 
+                                        for="{{ value | handle }}" 
+                                        class="color_{{ value | handle }}"
+                                        id="{{ variant.id }}"
+                                        onchange=updateProduct(this)
+                                        type='radio'
+                                        value="{{ value | handle }}"
+                                        idImageProd="product_image-{{ product.url }}"  
+                                        image_hover="{{ variant | image_url }}"
+                                        {% if product_option.selected_value == value %}checked{% endif %}
+                                    >
+                                        &nbsp;
+                                    </label>
                         {% endfor %}
                         </div>
                     {% endif %}
