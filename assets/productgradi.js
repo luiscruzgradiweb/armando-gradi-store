@@ -14,7 +14,6 @@ const updateQuantity=(quantity)=>{
 const addToCart= (button) => {
     
     const quantity=document.getElementById(`quantity__input-${button.id}`)
-    alert(quantity.value + " " + button.id)
     updateQuantity(quantity.value);
 
     fetch(window.Shopify.routes.root + 'cart/add.js', {
