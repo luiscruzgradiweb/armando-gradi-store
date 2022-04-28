@@ -34,7 +34,7 @@
                                 type='radio'
                                 defaultImage="{{ product.images | first | image_url: width: 300 }}"
                                 idImageProd="product_image-{{ product.url }}"  
-                                image_hover="https://cdn.shopify.com//s//files//1//0617//5093//5741//products//blanco.webp?v=1650991995" 
+                                image_hover="{{ variant.featured_media.preview_image.src }}" 
                                 style="accent-color:{{ color }}" 
                                 checked="checked"
                             />
