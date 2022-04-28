@@ -30,6 +30,7 @@
                         %}
                        
                         {% if colorCustomer contains variantColor %}
+                            <h3>{{ variant.featured_image | json | replace: "\", "" }}</h3>
                             <input class="input_productgrid" 
                                 type='radio'
                                 defaultImage="{{ product.images | first | image_url: width: 300 }}"
