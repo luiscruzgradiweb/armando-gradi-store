@@ -97,16 +97,10 @@
     for(item of inputs) {
         item.addEventListener("mouseover", function(e) {
             alert("event ", e)
-            let image = e.target.getAttribute("imagen_hover")
-            
-
-            {% comment %} let target_id = e.target.getAttribute("target_id")
-            let imgproduct = document.getElementById(target_id)
-            imgptproduct.src = image {% endcomment %}
-
+            let image = e.target.getAttribute("imagen_hover") 
 
         })
-    })
+    }
 
 </script>
 
