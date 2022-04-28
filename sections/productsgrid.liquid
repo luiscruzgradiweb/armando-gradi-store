@@ -67,7 +67,7 @@
                 </quantity-input>
             </div>
             <button 
-                productSelected="{{ product.variants }}"
+                productSelected="{{ product.variants | first | json }}"
                 class='button_productgrid'>
                 Add to cart
             </button>
@@ -109,7 +109,7 @@
         button.addEventListener('click',function(e){
             e.preventDefault()
             const product=e.target.getAttribute('productSelected')
-            console.log(JSON(product))
+            console.log(product)
         })
     }
 
