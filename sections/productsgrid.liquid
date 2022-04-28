@@ -109,7 +109,7 @@
     for(button of buttonsAdd){
         button.addEventListener('click',function(e){
             e.preventDefault()
-            const product=e.target.getAttribute('productSelected')
+            let product=e.target.getAttribute('productSelected')
             console.log(product)
         })
     }
