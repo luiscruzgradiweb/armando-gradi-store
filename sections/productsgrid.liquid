@@ -118,6 +118,7 @@
         })
 
         item.addEventListener("click", function(e) {
+            alert("click")
             let image = e.target.getAttribute("image_hover")
             let imageProduct = document.getElementById(e.target.getAttribute("defaultImage"))
             imageProduct.setAttribute("src", image)
