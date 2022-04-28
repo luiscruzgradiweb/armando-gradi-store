@@ -2,6 +2,17 @@
 <noscript>{{ 'component-productsgrid.css' | asset_url | stylesheet_tag }}</noscript>
 <script src="{{ 'productgradi.js' | asset_url }}" defer="defer"></script>
 
+
+<style>
+    {%- for color in colors_list -%}
+      {%- assign css = color | split: '|' -%}
+      .color_{{ css[0] | handle }} { background: {{ css[1] }} }
+      {%- comment -%}In this example I'm using background, you can use whatever you want{%- endcomment -%}
+    {%- endfor -%}
+</style>
+    
+
+
 {{ collections['coleccionprod'].handle | json }}
 <div class='productgrid_container'>
     {% for product in collections['coleccionprod'].products %}
@@ -21,27 +32,29 @@
             {% assign colors=settings.colors_gradiproducts | split: ',' %}
             <h2>{{ tempPrice }}</h2>
             <div class="container_input">
-                {% for tempColor in colors %}
-                    {% liquid 
-                        assign color=tempColor | split: ":" | last 
-                    %}
-                    {% for variant in product.variants %}
-                        {% liquid 
-                            assign variantColor=variant.option1  
-                            assign colorCustomer=tempColor | split: ":" | first
-                        %}
-                       
-                        {% if colorCustomer contains variantColor %}
+                {% assign colors_list = section.settings.colors | newline_to_br | split: '<br />' %}
+                {% for product_option in product.options_with_values %}
+                    <p>{{ product_option.name }}:</p>
+                
+                    {% if product_option.name == 'Color' or product_option.name == 'Colour' %}
+                
+                        <div>
+                        {% for value in product_option.values %}
                             <input class="input_productgrid"
                                 id="{{ variant.id }}"
                                 onchange=updateProduct(this)
                                 type='radio'
+                                value="{{ value | handle }}"
                                 idImageProd="product_image-{{ product.url }}"  
                                 image_hover="{{ variant | image_url }}" 
                                 style="accent-color:{{ color }}"
+                                {% if product_option.selected_value == value %}checked{% endif %}
                             />
-                        {% endif %}
-                    {% endfor %}
+                            <label for="{{ value | handle }}" class="color_{{ value | handle }}"></label>
+                        {% endfor %}
+                        </div>
+                    {% endif %}
+
                 {% endfor %}
             </div>
             <div class="container_quantity">
@@ -73,4 +86,21 @@
     {% endfor %}
 </div>
 
+
+
+
+
+{% schema %}
+  {
+    "name": "Product Section",
+    "settings": [
+      {
+        "type": "textarea",
+        "id": "colors",
+        "label": "Colors Mapping",
+        "default": "Black|#000000\nWhite|#ffffff\nLight Blue|#03c2fc"
+      }
+    ]
+  }
+{% endschema %}
 
