@@ -1,10 +1,13 @@
 {
-    "sections": {
-      "main": {
-        "type": "productsgrid"
+  "sections": {
+    "main": {
+      "type": "productsgrid",
+      "settings": {
+        "colors": "black|#000000\nwhite|#ffffff\nblue|#03c2fc\nyellow|yelow\nbrown|brown"
       }
-    },
-    "order": [
-      "main"
-    ]
-  }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
