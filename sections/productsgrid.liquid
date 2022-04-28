@@ -49,7 +49,10 @@
                                 value="{{ value | handle }}"
                                 idImageProd="product_image-{{ product.url }}"  
                                 image_hover="{{ variant | image_url }}" 
-                                style="accent-color:{{ color }}"
+                                style="color_{{ value | handle }}"
+                                {% if value == product_option.selected_value %}
+                                    checked
+                                {% endif %}
                                 {% if product_option.selected_value == value %}checked{% endif %}
                             />
                             <label for="{{ value | handle }}" class="color_{{ value | handle }}">valor : {{value}} selected {{product_option.selected_value}}</label>
