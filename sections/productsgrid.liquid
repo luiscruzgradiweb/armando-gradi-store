@@ -67,7 +67,7 @@
                 </quantity-input>
             </div>
             <button 
-                onclick="addToCart('{{ product.variants | first | json }}')"
+                productSelected="{{ product.variants | first | json }}"
                 class='button_productgrid'>
                 Add to cart
             </button>
@@ -102,6 +102,15 @@
           .finally(() => {
             window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
           }); {% endcomment %}
+    }
+
+    const buttonsAdd=document.getElementsByClassName('button_productgrid')
+    for(button of buttonsAdd){
+        button.addEventListener('click',function(e){
+            e.preventDefault()
+            const product=e.target.getAttribute('productSelected')
+            console.log(product)
+        })
     }
 
     let inputs = document.getElementsByClassName("input_productgrid")
