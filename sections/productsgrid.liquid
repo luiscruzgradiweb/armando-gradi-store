@@ -3,13 +3,7 @@
 <script src="{{ 'productgradi.js' | asset_url }}" defer="defer"></script>
 
 
-<style>
-    {%- for color in colors_list -%}
-      {%- assign css = color | split: '|' -%}
-      .color_{{ css[0] | handle }} { background: {{ css[1] }} }
-      {%- comment -%}In this example I'm using background, you can use whatever you want{%- endcomment -%}
-    {%- endfor -%}
-</style>
+
     
 
 
@@ -33,6 +27,13 @@
             <h2>{{ tempPrice }}</h2>
             <div class="container_input">
                 {% assign colors_list = section.settings.colors | newline_to_br | split: '<br />' %}
+                <style>
+                    {%- for color in colors_list -%}
+                      {%- assign css = color | split: '|' -%}
+                      .color_{{ css[0] | handle }} { background: {{ css[1] }} }
+                      {%- comment -%}In this example I'm using background, you can use whatever you want{%- endcomment -%}
+                    {%- endfor -%}
+                </style>
                 {% for product_option in product.options_with_values %}
                     <p>{{ product_option.name }}:</p>
                 
@@ -51,7 +52,7 @@
                                 style="accent-color:{{ color }}"
                                 {% if product_option.selected_value == value %}checked{% endif %}
                             />
-                            <label for="{{ value | handle }}" class="color_{{ value | handle }}"></label>
+                            <label for="{{ value | handle }}" style='background:{{calue}}' class="color_{{ value | handle }}"></label>
                         {% endfor %}
                         </div>
                     {% endif %}
