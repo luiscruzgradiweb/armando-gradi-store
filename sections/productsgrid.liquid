@@ -38,7 +38,7 @@
                         {% if colorCustomer contains variantColor %}
                             <input class="input_productgrid"
                                 id="{{ variant.id }}"
-                                onchange=upadupdateProuct(this)
+                                onchange=updateProduct(this)
                                 type='radio'
                                 idImageProd="product_image-{{ product.url }}"  
                                 image_hover="{{ variant | image_url }}" 

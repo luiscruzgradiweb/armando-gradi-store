@@ -3,7 +3,7 @@ const products={
     quantity:1,
 };
 
-const updateProuct=(variant)=>{
+const updateProduct=(variant)=>{
     products={
         id:variant.id,
         quantity:variant.quantity,
