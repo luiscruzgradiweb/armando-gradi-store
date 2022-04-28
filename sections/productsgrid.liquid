@@ -44,9 +44,8 @@
 
                                 {% liquid
                                     assign currentPosition=forloop.index | minus: 1
-                                    assign position=product.variants[currentPosition] 
+                                    assign variant=product.variants[currentPosition] 
                                 %}
-                                <h3>{{ position | json}}</h3>
                                 <label for="{{ value | handle }}" class="color_{{ value | handle }}">
                                     <input
                                         id="{{ variant.id }}"
