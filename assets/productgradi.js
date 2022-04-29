@@ -4,7 +4,9 @@ let products={
 };
 
 const updateProduct=(variant)=>{
-    products.id=variant.id
+    if(variant.available){
+        products.id=variant.id
+    }
 }
 
 const updateQuantity=(quantity)=>{
@@ -36,6 +38,8 @@ const addToCart= (button) => {
             };
             window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
         });
+    }else{
+        
     }
 }
 
