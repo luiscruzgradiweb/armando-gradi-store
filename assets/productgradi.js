@@ -1,31 +1,28 @@
-let products={
-    id:undefined,
-    quantity:1,
-};
-let currentCheckedInput=undefined;
+import Productsgrid from "./Productsgrid";
+
+const productgrid=new Productsgrid()
 
 const updateProduct=(variant)=>{
-    const available= variant.getAttribute('available');
-    if(available){
-        products.id=variant.id
-    }
+    const available = variant.getAttribute('available');
+    available ? productgrid.setProductID(variant.id) : undefined
+    
 }
 
 const updateQuantity=(quantity)=>{
-    products.quantity=quantity;
+    productgrid.setProductQuantity(quantity);
 }
 
 const addToCart= (button) => {
     
     const quantity=document.getElementById(`quantity__input-${button.id}`)
     updateQuantity(quantity.value);
-    if(products.id!==undefined){
+    if(productgrid.getProduct().id!==undefined){
         fetch(window.Shopify.routes.root + 'cart/add.js', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json' 
             },
-            body: JSON.stringify(products)
+            body: JSON.stringify(productgrid.getProduct())
         })
         .then(response => {
             return response.json();
@@ -34,11 +31,8 @@ const addToCart= (button) => {
             console.error('Error:', error);
         })
         .finally(() => {
-            products={
-                id:undefined,
-                quantity:1,
-            };
-            window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
+            productgrid.products.resetProduct()
+            window.top.location.href = "/cart"
         });
     }else{
         
@@ -53,6 +47,7 @@ for(button of buttonsAdd){
 
 let inputs = document.getElementsByClassName("input_productgrid")
 for(item of inputs) {
+    //crear funcion con parametro evento 
     item.addEventListener("mouseover", function(e) {
         let image = e.target.getAttribute("image_hover")
         let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
@@ -80,6 +75,4 @@ for(item of inputs) {
         imageProduct.setAttribute("defaultImage", image)
        
     })
-
-
 }
