@@ -52,21 +52,19 @@
                                         class="input_productgrid"
                                         id="{{ variant.id }}"
                                         onchange=updateProduct(this)
-                                        type='radio'
-                                        value="{{ value | handle }}"
-                                        idImageProd="product_image-{{ product.url }}"  
-                                        image_hover="{{ variant | image_url }}"
-                                        {% if product_option.selected_value == value %}checked{% endif %}
-                                    />
-                                    <label for="{{ value | handle }}" class="color_{{ value | handle }} input_productgrid"
-                                        id="{{ variant.id }}"
-                                        onchange=updateProduct(this)
                                         type='color'
                                         value="{{ value | handle }}"
                                         idImageProd="product_image-{{ product.url }}"  
                                         image_hover="{{ variant | image_url }}"
                                         {% if product_option.selected_value == value %}checked{% endif %}
-                                    >&nbsp;</label>
+                                    />
+                                    <label 
+                                        for="{{ value | handle }}" 
+                                        class="color_{{ value | handle }}" 
+                                        {% if product_option.selected_value == value %}checked{% endif %}
+                                    >
+                                        &nbsp;
+                                    </label>
                         {% endfor %}
                         </div>
                     {% endif %}
