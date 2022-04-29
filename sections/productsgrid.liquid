@@ -49,12 +49,13 @@
                                     assign variant=product.variants[currentPosition] 
                                 %}
                                     <input
+                                        id={{ value | handle }}
                                         {% if product_option.selected_value == value %}checked{% endif %}
-                                        
+                                        hidden
                                     />
                                     <label 
                                         class="color_{{ value | handle }} input_productgrid" 
-                                        for="{{ variant.id }}"
+                                        for={{ value | handle }}
                                         id="{{ variant.id }}"
                                         value="{{ value | handle }}"
                                         onclick=updateProduct(this)
