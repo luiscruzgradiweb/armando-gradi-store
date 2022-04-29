@@ -1,4 +1,4 @@
-class Productsgrid{
+export class Productsgrid{
     #variant = 1234
     #quantity = 1
 
@@ -22,4 +22,3 @@ class Productsgrid{
     }
 }
 
-module.exports = Productsgrid
