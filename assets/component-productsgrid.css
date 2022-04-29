@@ -41,6 +41,7 @@
 }
 
 .input_productgrid{
+    position:relative;
     width: 25px;
     height: 25px;
     border: none;
@@ -50,7 +51,10 @@
     cursor:pointer;
 }
 
-label {
+label { 
+    position: absolute;
+    top:50%;
+    left:50%;
     display: inline-block;
     width: 30px;
     height: 30px;
