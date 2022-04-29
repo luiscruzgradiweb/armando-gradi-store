@@ -40,7 +40,7 @@
     justify-content:center;
 }
 
-.input_productgrid{
+/* .input_productgrid{
     width: 25px;
     height: 25px;
     border: none;
@@ -48,27 +48,19 @@
     margin:0;
     padding:0;
     border-radius: 50%;
-    /* border-bottom: 1px solid black; */
-    /* margin-bottom: 10px; */
     cursor:pointer;
-}
+} */
 
-input[type=radio] {
-    display:none; 
-    margin:10px;
+input[type="color"] {
+    border: 2px solid;
+    padding: 0;
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
 }
-input[type=radio] + label {
-    display:inline-block;
-    margin:-2px;
-    padding: 4px 12px;
-    background-color: #e7e7e7;
-    border-color: #ddd;
-}
-input[type=radio]:checked + label { 
-   background-image: none;
-    background-color:#d0d0d0;
-}
-
 
 /* .input_productgrid:checked{
     width: 55px;
