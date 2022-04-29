@@ -1,4 +1,4 @@
-export default class Productsgrid{
+class Productsgrid{
     #variant = 1234
     #quantity = 1
 
@@ -21,3 +21,5 @@ export default class Productsgrid{
         this.#quantity=1
     }
 }
+
+module.export = Productsgrid
