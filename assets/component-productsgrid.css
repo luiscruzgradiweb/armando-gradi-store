@@ -73,6 +73,6 @@ label {
     border: 1px solid gray;
 }
 
-label:focus > .input_productgrid {
+label:focus ~ .input_productgrid {
     border: 3px solid black;
 }
