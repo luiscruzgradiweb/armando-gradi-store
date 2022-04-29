@@ -65,13 +65,9 @@ for(item of inputs) {
     item.addEventListener("click", function(e) {
         let image = e.target.getAttribute("image_hover")
         let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
-        let variant = e.target.getAttribute("variant")
-        let idProduct = e.target.getAttribute("idProduct")
-        let button=document.getElementById(idProduct)
         imageProduct.setAttribute("src", image)
         imageProduct.setAttribute("defaultImage", image)
-        button.setAttribute("currentVariant", variant)
-        
+       
     })
 
 
