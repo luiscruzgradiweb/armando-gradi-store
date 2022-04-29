@@ -46,6 +46,8 @@
 
 .input_productgrid{
     position: absolute;
+    top: 0;
+    left: 0;
     width: 25px;
     height: 25px;
     border: none;
@@ -57,14 +59,10 @@
 
 label { 
     position: absolute;
-    left:-14px;
+    top: 0;
+    left: 0;
     display: inline-block;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    transition: all .2s ease-in-out;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-duration: 1.6s;
-    animation-name: dot-anim;
 }
