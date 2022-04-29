@@ -8,7 +8,7 @@ const updateProduct=(variant)=>{
     
 }
 
-const updateQuantity=(quantity)=>{
+const updateQuantity = quantity => {
     productgrid.setProductQuantity(quantity);
 }
 
@@ -16,6 +16,7 @@ const addToCart= (button) => {
     
     const quantity=document.getElementById(`quantity__input-${button.id}`)
     updateQuantity(quantity.value);
+    alert(productgrid.getProduct().id)
     if(productgrid.getProduct().id!==undefined){
         fetch(window.Shopify.routes.root + 'cart/add.js', {
             method: 'POST',
