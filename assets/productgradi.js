@@ -20,7 +20,6 @@ const addToCart= (button) => {
     
     const quantity=document.getElementById(`quantity__input-${button.id}`)
     updateQuantity(quantity.value);
-    alert(productsgrid.getProduct().id)
     if(productsgrid.getProduct().id!==undefined){
         fetch(window.Shopify.routes.root + 'cart/add.js', {
             method: 'POST',
