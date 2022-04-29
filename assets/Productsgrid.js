@@ -1,22 +1,23 @@
 export default class Productsgrid{
-    #product={
-        id:undefined,
-        quantity:1,
-    }
-    #currentCheckedInput=undefined
+    #variant = undefined
+    #quantity = 1
 
     setProductID(idProduct){
-        this.#product.id=idProduct
+        this.#variant=idProduct
+        alert('si entre')
     }
     setProductQuantity(quantity){
-        this.#product.quantity=quantity
+        this.#quantity=quantity
     }
 
     getProduct(){
-        return this.#product
+        return {
+            id:this.#variant,
+            quantity:this.#quantity
+        }
     }
     resetProduct(){
-        this.#product.id=undefined
-        this.#product.quantity=1
+        this.#variant=undefined
+        this.#quantity=1
     }
 }
