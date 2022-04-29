@@ -41,7 +41,6 @@
 }
 
 .input_productgrid{
-    position:relative;
     width: 25px;
     height: 25px;
     border: none;
@@ -52,9 +51,7 @@
 }
 
 label { 
-    position: absolute;
-    top:50%;
-    left:50%;
+    left:-14px;
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -64,18 +61,4 @@ label {
     animation-iteration-count: infinite;
     animation-duration: 1.6s;
     animation-name: dot-anim;
-}
-
-label:before {
-    content: "";
-    position: absolute;
-    width:25px;
-    height: 25px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: rgba(0, 0, 0, 0.117647) 0 0 .8vw 0, rgba(0, 0, 0, 0.239216) 0 .8vw .8vw 0;
-    transition: all .2s;
-}
-label:hover:before {
-    box-shadow: rgba(0, 0, 0, 0.0784314) 0 0 1vw 0, rgba(0, 0, 0, 0.239216) 0 1vw 1vw 0;
 }
