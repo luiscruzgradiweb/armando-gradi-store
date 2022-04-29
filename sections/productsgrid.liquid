@@ -51,6 +51,10 @@
                                     <input
                                         id={{ value | handle }}
                                         type='radio'
+                                        hidden
+                                    />
+                                    <label 
+                                        class="color_{{ value | handle }} input_productgrid" 
                                         for={{ value | handle }}
                                         id="{{ variant.id }}"
                                         value="{{ value | handle }}"
@@ -58,10 +62,6 @@
                                         available={{ variant.available }}
                                         idImageProd="product_image-{{ product.url }}"  
                                         image_hover="{{ variant | image_url }}"
-                                        hidden
-                                    />
-                                    <label 
-                                        class="color_{{ value | handle }} input_productgrid" 
                                     >
                                         &nbsp;
                                     </label>

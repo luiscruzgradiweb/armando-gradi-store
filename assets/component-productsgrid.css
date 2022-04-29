@@ -71,8 +71,11 @@ label {
     border: 1px solid gray;
 }
 
-label:focus {
+label:hover {
     border: 3px solid black;
     width: 35px;
     height: 35px;
+}
+input:checked + label {
+    background-color: black;
 }
