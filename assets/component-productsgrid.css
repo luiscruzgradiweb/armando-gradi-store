@@ -40,16 +40,14 @@
     justify-content:center;
 }
 
-/* .input_productgrid{
+.input_productgrid{
     width: 25px;
     height: 25px;
     border: none;
-    accent-color: gray;
     margin:0;
     padding:0;
-    border-radius: 50%;
     cursor:pointer;
-} */
+}
 
 label {
     display: inline-block;
