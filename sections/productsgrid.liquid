@@ -57,6 +57,7 @@
                                         idImageProd="product_image-{{ product.url }}"  
                                         image_hover="{{ variant | image_url }}"
                                         {% if product_option.selected_value == value %}checked{% endif %}
+                                        hidden
                                     />
                                     <label 
                                         for="{{ variant.id }}"
