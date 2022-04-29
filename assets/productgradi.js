@@ -1,27 +1,30 @@
-import { Productsgrid } from './Productsgrid.js'
-
-const productsgrid=new Productsgrid() 
+let products={
+    id:undefined,
+    quantity:1,
+};
+let currentCheckedInput=undefined;
 
 const updateProduct=(variant)=>{
     const available = variant.getAttribute('available');
-    productsgrid.setProductID(variant.id)
+    products.id = available ? variant.id : undefined;
+    
 }
 
-const updateQuantity = quantity => {
-    productgrid.setProductQuantity(quantity);
+const updateQuantity=(quantity)=>{
+    products.quantity=quantity;
 }
 
 const addToCart= (button) => {
     
     const quantity=document.getElementById(`quantity__input-${button.id}`)
     updateQuantity(quantity.value);
-    if(productsgrid.getProduct().id!==undefined){
+    if(products.id!==undefined){
         fetch(window.Shopify.routes.root + 'cart/add.js', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json' 
             },
-            body: JSON.stringify(productsgrid.getProduct())
+            body: JSON.stringify(products)
         })
         .then(response => {
             return response.json();
@@ -30,8 +33,11 @@ const addToCart= (button) => {
             console.error('Error:', error);
         })
         .finally(() => {
-            productgrid.resetProduct()
-            window.top.location.href = "/cart"
+            products={
+                id:undefined,
+                quantity:1,
+            };
+            window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
         });
     }else{
         
@@ -44,8 +50,8 @@ for(button of buttonsAdd){
     button.addEventListener('click', addToCart)
 } 
 
-let labels = document.getElementsByClassName("input_productgrid")
-for(item of labels) {
+let inputs = document.getElementsByClassName("input_productgrid")
+for(item of inputs) {
     item.addEventListener("mouseover", function(e) {
         let image = e.target.getAttribute("image_hover")
         let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
@@ -61,10 +67,18 @@ for(item of labels) {
     })
 
     item.addEventListener("click", function(e) {
+        const inputCheckedID=e.target.getAttribute("for")
+        if(currentCheckedInput!==undefined){
+            const input=document.getElementById(currentCheckedInput)
+            input.checked=false;
+        }
+        currentCheckedInput=inputCheckedID;
         let image = e.target.getAttribute("image_hover")
         let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
         imageProduct.setAttribute("src", image)
         imageProduct.setAttribute("defaultImage", image)
        
     })
+
+
 }
