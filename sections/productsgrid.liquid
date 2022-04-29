@@ -53,16 +53,15 @@
                                         hidden
                                     />
                                     <label 
+                                        class="color_{{ value | handle }} input_productgrid" 
                                         for="{{ variant.id }}"
                                         id="{{ variant.id }}"
+                                        value="{{ value | handle }}"
                                         onclick=updateProduct(this)
                                         type='radio'
-                                        value="{{ value | handle }}"
                                         available={{ variant.available }}
                                         idImageProd="product_image-{{ product.url }}"  
                                         image_hover="{{ variant | image_url }}"
-                                        class="color_{{ value | handle }} input_productgrid" 
-                                       {% if product_option.selected_value == value %}checked{% endif %}
                                     >
                                         &nbsp;
                                     </label>
