@@ -1,7 +1,6 @@
 import { Productsgrid } from './Productsgrid.js'
-const productsgrid=new Productsgrid() 
 
-console.log('el valor de la clase es: ', productsgrid.variant)
+const productsgrid=new Productsgrid() 
 
 const updateProduct=(variant)=>{
     const available = variant.getAttribute('available');
