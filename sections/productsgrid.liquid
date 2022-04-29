@@ -41,9 +41,9 @@
                 
                     {% if product_option.name == 'Color' or product_option.name == 'Colour' %}
                 
-                        <div class="wraper">
+                        
                             {% for value in product_option.values %}
-
+                                <div class="wraper">
                                 {% liquid
                                     assign currentPosition=forloop.index | minus: 1
                                     assign variant=product.variants[currentPosition] 
@@ -65,8 +65,9 @@
                                     >
                                         &nbsp;
                                     </label>
+                                </div>
                         {% endfor %}
-                        </div>
+                       
                     {% endif %}
 
                 {% endfor %}
