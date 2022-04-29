@@ -54,6 +54,7 @@
                                         onchange=updateProduct(this)
                                         type='radio'
                                         value="{{ value | handle }}"
+                                        available={{ variant.available }}
                                         idImageProd="product_image-{{ product.url }}"  
                                         image_hover="{{ variant | image_url }}"
                                         {% if product_option.selected_value == value %}checked{% endif %}
@@ -96,7 +97,7 @@
                 onclick=addToCart(this)
                 id="{{ product.id }}"
                 class='button_productgrid'>
-                Add to cart
+                {{ products.product.add_to_cart | t }}
             </button>
         </div>
     {% endfor %}
