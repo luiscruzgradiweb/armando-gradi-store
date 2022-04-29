@@ -1,4 +1,4 @@
-import {Productsgrid} from 'Productsgrid.js'
+const {Productsgrid} =require('Productsgrid.js')
 const productsgrid=new Productsgrid() 
 
 console.log('el valor de la clase es: ', productsgrid.variant)
