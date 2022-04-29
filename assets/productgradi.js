@@ -1,4 +1,4 @@
-const Productsgrid = require('./Productsgrid')
+const Productsgrid = require('Productsgrid.js')
 
 const productsgrid=new Productsgrid() 
 
