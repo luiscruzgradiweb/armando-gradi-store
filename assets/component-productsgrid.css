@@ -45,9 +45,6 @@
 }
 
 .input_productgrid{
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 25px;
     height: 25px;
     border: none;
@@ -58,9 +55,6 @@
 }
 
 label { 
-    position: absolute;
-    top: 0;
-    left: 0;
     display: inline-block;
     width: 30px;
     height: 30px;
