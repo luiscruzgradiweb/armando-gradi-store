@@ -53,7 +53,6 @@ for(button of buttonsAdd){
 let labels = document.getElementsByClassName("input_productgrid")
 for(item of labels) {
     item.addEventListener("mouseover", function(e) {
-        alert('mouseover ok')
         let image = e.target.getAttribute("image_hover")
         let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
         imageProduct.setAttribute("src", image)
