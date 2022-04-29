@@ -4,8 +4,7 @@ const productgrid=new Productsgrid()
 
 const updateProduct=(variant)=>{
     const available = variant.getAttribute('available');
-    available ? productgrid.setProductID(variant.id) : undefined
-    
+    productgrid.setProductID(variant.id)
 }
 
 const updateQuantity = quantity => {
