@@ -2,6 +2,7 @@ let products={
     id:undefined,
     quantity:1,
 };
+let currentCheckedInput=undefined;
 
 const updateProduct=(variant)=>{
     const available= variant.getAttribute('available');
@@ -53,7 +54,6 @@ for(button of buttonsAdd){
 let inputs = document.getElementsByClassName("input_productgrid")
 for(item of inputs) {
     item.addEventListener("mouseover", function(e) {
-        
         let image = e.target.getAttribute("image_hover")
         let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
         imageProduct.setAttribute("src", image)
@@ -68,6 +68,13 @@ for(item of inputs) {
     })
 
     item.addEventListener("click", function(e) {
+        const inputCheckedID=e.target.getAttribute("for")
+        if(currentCheckedInput!==undefined){
+            const input=document.getElementById(currentCheckedInput)
+            input.checked=false;
+        }else{
+            currentCheckedInput=inputCheckedID;
+        }
         let image = e.target.getAttribute("image_hover")
         let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
         imageProduct.setAttribute("src", image)
