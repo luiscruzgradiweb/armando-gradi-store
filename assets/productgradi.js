@@ -72,9 +72,8 @@ for(item of inputs) {
         if(currentCheckedInput!==undefined){
             const input=document.getElementById(currentCheckedInput)
             input.checked=false;
-        }else{
-            currentCheckedInput=inputCheckedID;
         }
+        currentCheckedInput=inputCheckedID;
         let image = e.target.getAttribute("image_hover")
         let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
         imageProduct.setAttribute("src", image)
