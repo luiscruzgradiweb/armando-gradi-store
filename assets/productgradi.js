@@ -1,9 +1,9 @@
 import Productsgrid from "./Productsgrid";
 
-// const productsgrid=new Productsgrid()
-const productsgrid={
-    
-}
+const productsgrid=new Productsgrid()
+
+console.log('el valor de la clase es: ', productsgrid.variant)
+
 const updateProduct=(variant)=>{
     const available = variant.getAttribute('available');
     productsgrid.setProductID(variant.id)

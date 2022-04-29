@@ -1,5 +1,5 @@
 export default class Productsgrid{
-    #variant = undefined
+    #variant = 1234
     #quantity = 1
 
     setProductID(idProduct){
