@@ -7,6 +7,7 @@ const updateProduct=(variant)=>{
     if(variant.available){
         products.id=variant.id
     }
+    alert(products.id)
 }
 
 const updateQuantity=(quantity)=>{
@@ -16,6 +17,7 @@ const updateQuantity=(quantity)=>{
 const addToCart= (button) => {
     
     const quantity=document.getElementById(`quantity__input-${button.id}`)
+    alert(quantity.value)
     updateQuantity(quantity.value);
     if(products.id!==undefined){
         fetch(window.Shopify.routes.root + 'cart/add.js', {
