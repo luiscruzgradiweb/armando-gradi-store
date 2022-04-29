@@ -3,7 +3,7 @@
     "main": {
       "type": "productsgrid",
       "settings": {
-        "colors": "black|#000000\nwhite|#ffffff\nblue|#03c2fc\nyellow|yellow\nbrown|brown\npurple|purple\ngray|gray\nred|red"
+        "colors": "black|#000000\nwhite|#ffffff\nblue|#03c2fc\nyellow|yellow\nbrown|brown\npurple|purple\ngray|gray\nred|red\nfloripepiado|#77CC66"
       }
     }
   },
