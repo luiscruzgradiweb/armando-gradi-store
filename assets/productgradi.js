@@ -1,4 +1,4 @@
-import {Productsgrid} from './productgrid.js'
+const Productsgrid = require('./Productsgrid')
 
 const productsgrid=new Productsgrid() 
 
