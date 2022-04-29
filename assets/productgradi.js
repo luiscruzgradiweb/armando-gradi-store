@@ -4,9 +4,7 @@ let products={
 };
 
 const updateProduct=(variant)=>{
-    if(variant.available){
-        products.id=variant.id
-    }
+    products.id=variant.id
     alert(products.id)
 }
 
