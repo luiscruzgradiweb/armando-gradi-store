@@ -49,21 +49,20 @@
                                     assign variant=product.variants[currentPosition] 
                                 %}
                                     <input
-                                        class="input_productgrid"
-                                        id="{{ variant.id }}"
-                                        onchange=updateProduct(this)
-                                        type='radio'
-                                        value="{{ value | handle }}"
-                                        available={{ variant.available }}
-                                        idImageProd="product_image-{{ product.url }}"  
-                                        image_hover="{{ variant | image_url }}"
                                         {% if product_option.selected_value == value %}checked{% endif %}
                                         hidden
                                     />
                                     <label 
                                         for="{{ variant.id }}"
-                                        class="color_{{ value | handle }}" 
-                                        {% if product_option.selected_value == value %}checked{% endif %}
+                                        id="{{ variant.id }}"
+                                        onclick=updateProduct(this)
+                                        type='radio'
+                                        value="{{ value | handle }}"
+                                        available={{ variant.available }}
+                                        idImageProd="product_image-{{ product.url }}"  
+                                        image_hover="{{ variant | image_url }}"
+                                        class="color_{{ value | handle }} input_productgrid" 
+                                       {% if product_option.selected_value == value %}checked{% endif %}
                                     >
                                         &nbsp;
                                     </label>
