@@ -76,6 +76,6 @@ label:hover {
     width: 35px;
     height: 35px;
 }
-input:checked + label {
+input:focus + label {
     border: 3px solid black;
 }
