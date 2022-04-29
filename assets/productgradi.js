@@ -1,10 +1,7 @@
 import {Productsgrid} from './productgrid.js'
 
-//const productsgrid=new Productsgrid() 
-const productsgrid={
-    variant:1234,
-    quantity:1,
-}
+const productsgrid=new Productsgrid() 
+
 console.log('el valor de la clase es: ', productsgrid.variant)
 
 const updateProduct=(variant)=>{
