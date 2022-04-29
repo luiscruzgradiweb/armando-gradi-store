@@ -49,13 +49,13 @@
                                     assign variant=product.variants[currentPosition] 
                                 %}
                                     <input
-                                        id={{ value | handle }}
+                                        id="{{ variant.id }}-{{ value | handle }}"
                                         type='radio'
                                         hidden
                                     />
                                     <label 
                                         class="color_{{ value | handle }} input_productgrid" 
-                                        for={{ value | handle }}
+                                        for="{{ variant.id }}-{{ value | handle }}"
                                         id="{{ variant.id }}"
                                         value="{{ value | handle }}"
                                         onclick=updateProduct(this)
