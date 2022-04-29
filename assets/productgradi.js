@@ -1,10 +1,10 @@
 class Productsgrid{
-    #variant = 1234
+    #variant = undefined
     #quantity = 1
+    #currentCheckedInput=undefined
 
     setProductID(idProduct){
         this.#variant=idProduct
-        alert('si entre')
     }
     setProductQuantity(quantity){
         this.#quantity=quantity
@@ -19,6 +19,12 @@ class Productsgrid{
     resetProduct(){
         this.#variant=undefined
         this.#quantity=1
+    }
+    setCurrentCheckedInput(input){
+        this.#currentCheckedInput=input
+    }
+    getCurrentCheckedInput(){
+        return this.#currentCheckedInput
     }
 }
 
@@ -86,11 +92,11 @@ for(item of inputs) {
 
     item.addEventListener("click", function(e) {
         const inputCheckedID=e.target.getAttribute("for")
-        if(currentCheckedInput!==undefined){
+        if(productgrid.getCurrentCheckedInput()!==undefined){
             const input=document.getElementById(currentCheckedInput)
             input.checked=false;
         }
-        currentCheckedInput=inputCheckedID;
+        productgrid.setCurrentCheckedInput(inputCheckedID)
         let image = e.target.getAttribute("image_hover")
         let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
         imageProduct.setAttribute("src", image)
