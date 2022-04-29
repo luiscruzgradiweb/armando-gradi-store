@@ -24,27 +24,28 @@ class Productsgrid{
 
 const productgrid= new Productsgrid();
 
+
 const updateProduct=(variant)=>{
     const available = variant.getAttribute('available');
-    products.id = available ? variant.id : undefined;
+    available ? productgrid.setProductID(variant.id) : undefined
     
 }
 
 const updateQuantity=(quantity)=>{
-    products.quantity=quantity;
+    productgrid.setProductQuantity(quantity)
 }
 
 const addToCart= (button) => {
     
     const quantity=document.getElementById(`quantity__input-${button.id}`)
     updateQuantity(quantity.value);
-    if(products.id!==undefined){
+    if(productgrid.getProduct().id!==undefined){
         fetch(window.Shopify.routes.root + 'cart/add.js', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json' 
             },
-            body: JSON.stringify(products)
+            body: JSON.stringify(productgrid.getProduct())
         })
         .then(response => {
             return response.json();
@@ -53,10 +54,7 @@ const addToCart= (button) => {
             console.error('Error:', error);
         })
         .finally(() => {
-            products={
-                id:undefined,
-                quantity:1,
-            };
+            productgrid.resetProduct();
             window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
         });
     }else{
