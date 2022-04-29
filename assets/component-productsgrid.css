@@ -73,6 +73,6 @@ label {
     border: 1px solid gray;
 }
 
-.label:checked{
+label:focus{
     border: 3px solid black;
 }
