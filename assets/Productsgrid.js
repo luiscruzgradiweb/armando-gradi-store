@@ -1,4 +1,4 @@
-export default class Productsgrid{
+class Productsgrid{
     #variant = 1234
     #quantity = 1
 
