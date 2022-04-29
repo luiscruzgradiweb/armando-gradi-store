@@ -40,7 +40,12 @@
     justify-content:center;
 }
 
+.wraper{
+    position:relative;
+}
+
 .input_productgrid{
+    position: absolute;
     width: 25px;
     height: 25px;
     border: none;
@@ -51,6 +56,7 @@
 }
 
 label { 
+    position: absolute;
     left:-14px;
     display: inline-block;
     width: 30px;
