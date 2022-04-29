@@ -22,4 +22,4 @@ class Productsgrid{
     }
 }
 
-module.export = Productsgrid
+module.exports = Productsgrid
