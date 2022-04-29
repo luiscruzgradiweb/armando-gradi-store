@@ -97,7 +97,7 @@
                 onclick=addToCart(this)
                 id="{{ product.id }}"
                 class='button_productgrid'>
-                {{ products.product.add_to_cart | t }}
+                <span>{{ 'products.product.add_to_cart' | t }}</span>
             </button>
         </div>
     {% endfor %}
