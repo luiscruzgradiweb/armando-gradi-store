@@ -72,3 +72,7 @@ label {
     cursor: pointer;
     border: 1px solid gray;
 }
+
+.label:focus{
+    border: 3px solid black;
+}
