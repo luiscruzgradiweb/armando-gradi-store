@@ -60,7 +60,7 @@
     margin:0;
     padding:0;
     cursor:pointer;
-    /* border: 1px solid gray; */
+    border: 1px solid gray;
 }
 
 label { 
@@ -73,6 +73,6 @@ label {
     border: 1px solid gray;
 }
 
-label:hover  .input_productgrid {
+label:hover + .input_productgrid {
     border: 3px solid black;
 }
