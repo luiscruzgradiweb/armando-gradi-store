@@ -93,7 +93,7 @@ for(item of inputs) {
     item.addEventListener("click", function(e) {
         const inputCheckedID=e.target.getAttribute("for")
         if(productgrid.getCurrentCheckedInput()!==undefined){
-            const input=document.getElementById(currentCheckedInput)
+            const input=document.getElementById(productgrid.getCurrentCheckedInput())
             input.checked=false;
         }
         productgrid.setCurrentCheckedInput(inputCheckedID)
