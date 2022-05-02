@@ -3,6 +3,7 @@
 <script src="{{ 'minicart.js' | asset_url }}" defer="defer"></script>
 
 <div id="minicart" class="minicart-container">
+  
     <div data-cart-background-overlay id="side-cart-overlay" class="side-cart-overlay">&nbsp;</div>
     <div id="side-cart" >
         <div class="side-cart open">
@@ -15,9 +16,12 @@
     
             {% render 'products-minicart' %}
             {% render 'minicart-summary' %}
+
         </form>
         {% render 'footer-minicart' %}
     </div>
+    
+  
 </div>
 
 

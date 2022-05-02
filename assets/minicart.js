@@ -22,6 +22,7 @@ class Cart{
                 this.updatePriceMinicart()
                 this.updateTotalPriceMinicart()
                 this.openMinicart()
+                this.updateBubble()
              });
          }else{
              alert('Por favor seleccione algún producto')
@@ -46,6 +47,9 @@ class Cart{
         })
         .catch( error => {
             console.error('Error:', error);
+        })
+        .finally(() => {
+            this.updateBubble()
         })
         
     }
@@ -78,6 +82,15 @@ class Cart{
         sideCartOverlay.classList.add('active')
      }
 
+     updateBubble = () => {
+        const bubble = document.getElementById('cart-icon-bubble')
+        const bubbleUpdated = this.getSection('minicart-bubble')
+        bubbleUpdated
+        .then( response => response.json() )
+        .then( data =>bubble.innerHTML= data['minicart-bubble'] )
+    }
+     
+
  }
 
  const cart=new Cart()
@@ -85,3 +98,10 @@ class Cart{
 const openMinicart = () => {
     cart.openMinicart()
 }
+
+window.document.getElementById("cart-close").addEventListener("click", function(e) {
+    const minicart = document.getElementById('minicart')
+    const sideCartOverlay = document.getElementById('side-cart-overlay')
+    sideCartOverlay.classList.remove('active')
+    minicart.style.visibility = 'hidden'
+})

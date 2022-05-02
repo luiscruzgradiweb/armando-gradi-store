@@ -1,11 +1,5 @@
 // (function(){
-window.document.getElementById("cart-close").addEventListener("click", function(e) {
-    const minicart = document.getElementById('minicart')
-    const sideCartOverlay = document.getElementById('side-cart-overlay')
-    sideCartOverlay.classList.remove('active')
-    minicart.style.visibility = 'hidden'
-    
-})
+
 
 
 const updateQuantityProduct = async (button) => {
