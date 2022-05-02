@@ -184,6 +184,17 @@
         "settings": {
           "color_scheme": "background-1"
         }
+      },
+      "minicart": {
+        "type": "minicart",
+        "settings": {
+          "title-minicart": "Hola Mundo",
+          "message-minicart": "✌️ Félicitations, vous bénéficiez de la livraison offerte!",
+          "cart-stock-message": "🔥 On garde votre panier mais plus pour très longtemps !",
+          "cart-footer-delivery": "Livraison",
+          "cart-footer-delivery-value": "Offerte",
+          "cart-total": "Total"
+        }
       }
     },
     "content_for_index": [
