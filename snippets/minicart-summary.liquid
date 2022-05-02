@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="{{ 'minicart-summary.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'minicart-summary.css' | asset_url | stylesheet_tag }}</noscript>
+
+    <div id="minicart-summary" class="cart-summary">
+        <div class="cart-stock-message">
+            <p> {{ section.settings.cart-stock-message }} </p>
+        </div>
+        <div class="cart-footer-delivery">
+            <p> {{ section.settings.cart-footer-delivery }} </p>
+            <p> {{ section.settings.cart-footer-delivery-value }} </p>
+        </div>
+        <div class="cart-footer-delivery">
+            <p class="z-h4"> {{ section.settings.cart-total }} </p>
+            <p class="z-h4"> {{ cart.total_price }} </p>
+        </div>
+        <div class="accept-policy">
+            <div>
+                <label for="Filter-label" class="facet-checkbox">
+                    <input type="checkbox"
+                      id="Filter-label"
+                    >
+            </div>
+            <p>J'accepte les <a>conditions générales de vente</a></p>
+        </div>
+
+        <div class="grid">
+            <div class="1/3 grid__cell align-center reassurance__container">
+              <div class="reassurance__item">                
+                  <img src="//cdn.shopify.com/s/files/1/2171/4151/files/panier_picto_1_60x60.jpg?v=1604480523" alt="reassurance">
+                  <p class="reassurance__desc p-custom">
+                    DES MILLIERS DE CLIENTS CONQUIS <span>4,8/5</span>
+                  </p>
+              </div>
+            </div>
+            <div class="1/3 grid__cell align-center reassurance__container">
+              <div class="reassurance__item">
+                  <img loading="lazy" src="//cdn.shopify.com/s/files/1/2171/4151/files/panier_picto_2_60x60.jpg?v=1604480538" alt="reassurance">
+                  <p class="reassurance__desc p-custom">
+                    60 NUITS D'ESSAI <span>RETOURS GRATUITS</span>
+                  </p>
+              </div>
+            </div>
+            <div class="1/3 grid__cell align-center reassurance__container">
+              <div class="reassurance__item">
+                  <img loading="lazy" src="//cdn.shopify.com/s/files/1/2171/4151/files/picto_panier_3-1_60x60.jpg?v=1604480553" alt="reassurance">
+                  <p class="reassurance__desc p-custom">
+                    PAIEMENT EN 3X<br><span>DÈS 100€</span>
+                  </p>
+              </div>
+            </div>
+        </div>
+    </div>

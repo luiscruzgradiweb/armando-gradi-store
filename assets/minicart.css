@@ -1,0 +1,56 @@
+.minicart-container{
+    visibility: hidden;
+}
+
+.side-cart-overlay.active{
+    opacity: .5;
+    visibility: visible;
+}
+.side-cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    z-index: 5000;
+    visibility: hidden;
+    opacity: 0;
+    background: #465461;
+}
+
+
+.side-cart.open {
+    transform: translate(-100%);
+
+}
+
+.close{
+    transform: translate(0%);
+}
+
+.side-cart {
+    position: fixed;
+    z-index: 1000000;
+    left: 100%;
+    width: 100%;
+    max-width: 100%;
+    top: 0;
+    bottom: 0;
+    background: white;
+    color: #465461;
+    overflow: auto;
+    min-height: 100%;
+}
+
+.cart{
+    padding: 0 5%;
+}
+
+
+@media screen and (min-width: 801px)
+{
+    .side-cart{
+        min-width: 500px;
+        width: 37%;
+    }
+}

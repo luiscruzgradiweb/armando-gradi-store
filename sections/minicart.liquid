@@ -1,1 +1,67 @@
-{% render 'header-cart' %}
+<link rel="stylesheet" href="{{ 'minicart.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'minicart.css' | asset_url | stylesheet_tag }}</noscript>
+<script src="{{ 'minicart.js' | asset_url }}" defer="defer"></script>
+
+<div id="minicart" class="minicart-container">
+    <div data-cart-background-overlay id="side-cart-overlay" class="side-cart-overlay">&nbsp;</div>
+    <div id="side-cart" >
+        <div class="side-cart open">
+        {% render 'header-cart' %}
+        </div>
+        <form data-side-cart-form="" action="/cart" method="post" novalidate class>
+            <div class="cart">
+                {% render 'progress-cart' %}
+            </div>
+    
+            {% render 'products-minicart' %}
+            {% render 'minicart-summary' %}
+        </form>
+        {% render 'footer-minicart' %}
+    </div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Title Minicart",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title-minicart",
+        "label": "Title Minicart", 
+        "default": "Mon panier"
+      },
+      {
+        "type":"text",
+        "id":"message-minicart",
+        "label":"Message Minicart",
+        "default":"✌️ Félicitations, vous bénéficiez de la livraison offerte!"
+      },
+      {
+        "type":"text",
+        "id":"cart-stock-message",
+        "label":"Message bottom",
+        "default": "🔥 On garde votre panier mais plus pour très longtemps !"
+      },
+      {
+        "type":"text",
+        "id":"cart-footer-delivery",
+        "label":"Message footer delivery",
+        "default": "Livraison"
+      },
+      {
+        "type":"text",
+        "id":"cart-footer-delivery-value",
+        "label":"Message footer delivery value",
+        "default": "Offerte"
+      },
+      {
+        "type":"text",
+        "id":"cart-total",
+        "label":"Message for total",
+        "default": "Total"
+      }
+    ]
+  }
+{% endschema %}

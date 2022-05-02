@@ -552,7 +552,8 @@
         </a>
       {%- endif -%}
 
-      <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+      <!-- <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble"> -->
+      <a href="#" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble" onclick=openMinicart()>
         {%- liquid
           if cart == empty
             render 'icon-cart-empty'

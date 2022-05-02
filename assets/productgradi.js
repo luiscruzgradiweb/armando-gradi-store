@@ -1,109 +1,89 @@
-class Productsgrid{
-    #variant = undefined
-    #quantity = 1
-    #currentCheckedInput=undefined
+// (function(){
 
-    setProductID(idProduct){
-        this.#variant=idProduct
-    }
-    setProductQuantity(quantity){
-        this.#quantity=quantity
-    }
+    class Product{
+        #variant = undefined
+        #quantity = 1
+        #currentCheckedInput=undefined
 
-    getProduct(){
-        return {
-            id:this.#variant,
-            quantity:this.#quantity
+        setQuantity(quantity){
+            if(!quantity) this.quantity = 1
+            this.#quantity=quantity
+        }
+        
+        resetProduct(){
+            this.#variant=undefined
+            this.#quantity=1
+        }
+        setProductId(idProduct){
+            this.#variant=idProduct
+        }
+        setProductQuantity(quantity){
+            this.#quantity=quantity
+        }
+        setCurrentCheckedInput(input){
+            this.#currentCheckedInput=input
+        }
+        getProduct(){
+            return {
+                id:this.#variant,
+                quantity:this.#quantity
+            }
+        }
+        getCurrentCheckedInput(){
+            return this.#currentCheckedInput
+        }
+        getProductId(){
+            return this.#variant
         }
     }
-    resetProduct(){
-        this.#variant=undefined
-        this.#quantity=1
+
+    const product= new Product()
+    // const cart= new Cart()
+
+    const updateProduct = (variant) => {
+        variant ? product.setProductId(variant) : product.setProductId(undefined)
     }
-    setCurrentCheckedInput(input){
-        this.#currentCheckedInput=input
-    }
-    getCurrentCheckedInput(){
-        return this.#currentCheckedInput
-    }
-}
-
-const productgrid= new Productsgrid();
 
 
-const updateProduct=(variant)=>{
-    const available = variant.getAttribute('available');
-    available ? productgrid.setProductID(variant.id) : undefined
-    
-}
-
-const updateQuantity=(quantity)=>{
-    productgrid.setProductQuantity(quantity)
-}
-
-const addToCart= (button) => {
-    
-    const quantity=document.getElementById(`quantity__input-${button.id}`)
-    updateQuantity(quantity.value);
-    if(productgrid.getProduct().id!==undefined){
-        fetch(window.Shopify.routes.root + 'cart/add.js', {
-            method: 'POST',
-            headers: {
-            'Content-Type': 'application/json' 
-            },
-            body: JSON.stringify(productgrid.getProduct())
+    const buttonsAddToCart= document.getElementsByClassName('button_productgrid')
+    for (let button of buttonsAddToCart) {
+        button.addEventListener('click', (event) => {
+            cart.addProduct(event)
         })
-        .then(response => {
-            return response.json();
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        })
-        .finally(() => {
-            productgrid.resetProduct();
-            window.document.location.href = "https://armando-gradi-store.myshopify.com/cart"
-        });
-    }else{
-        
     }
-}
 
+    let inputs = document.getElementsByClassName("input_productgrid")
+    for(item of inputs) {
+        item.addEventListener("mouseover", function(e) {
+            let image = e.target.getAttribute("image_hover")
+            let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
+            imageProduct.setAttribute("src", image)
+            
+        })
 
-const buttonsAdd=document.getElementsByClassName('button_productgrid')
-for(button of buttonsAdd){
-    button.addEventListener('click', addToCart)
-} 
+        item.addEventListener("mouseout", function(e) {
+            let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
+            let image = imageProduct.getAttribute("defaultImage")
+            imageProduct.setAttribute("src", image)
+            
+        })
 
-let inputs = document.getElementsByClassName("input_productgrid")
-for(item of inputs) {
-    item.addEventListener("mouseover", function(e) {
-        let image = e.target.getAttribute("image_hover")
-        let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
-        imageProduct.setAttribute("src", image)
+        item.addEventListener("click", function(e) {
+            updateProduct(e.target.getAttribute("id"))
+            const inputCheckedID=e.target.getAttribute("for")
+            if(product.getCurrentCheckedInput()!==undefined){
+                const input=document.getElementById(product.getCurrentCheckedInput())
+                input.checked=false;
+            }
+            product.setCurrentCheckedInput(inputCheckedID)
+            let image = e.target.getAttribute("image_hover")
+            let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
+            imageProduct.setAttribute("src", image)
+            imageProduct.setAttribute("defaultImage", image)
         
-    })
-
-    item.addEventListener("mouseout", function(e) {
-        let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
-        let image = imageProduct.getAttribute("defaultImage")
-        imageProduct.setAttribute("src", image)
-        
-    })
-
-    item.addEventListener("click", function(e) {
-        const inputCheckedID=e.target.getAttribute("for")
-        if(productgrid.getCurrentCheckedInput()!==undefined){
-            const input=document.getElementById(productgrid.getCurrentCheckedInput())
-            input.checked=false;
-        }
-        productgrid.setCurrentCheckedInput(inputCheckedID)
-        let image = e.target.getAttribute("image_hover")
-        let imageProduct = document.getElementById(e.target.getAttribute("idImageProd"))
-        imageProduct.setAttribute("src", image)
-        imageProduct.setAttribute("defaultImage", image)
-       
-    })
+        })
 
 
-}
+    }
 
+// })();

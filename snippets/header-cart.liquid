@@ -1,4 +1,12 @@
-<div>
-    <h1>Hola Mundo</h1>
-</div>
+<link rel="stylesheet" href="{{ 'header-minicart.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'header-minicart.css' | asset_url | stylesheet_tag }}</noscript>
 
+<div class="cart-header">
+    <div class="container--large relative">
+        <p class="heading z-h34 cart__title">
+            {{ section.settings.title-minicart }}
+        
+        </p>
+        <div id="cart-close" class="cart-close" />
+    </div>
+</div>

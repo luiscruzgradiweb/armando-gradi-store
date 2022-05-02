@@ -1,0 +1,28 @@
+.cart-progress{
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+.side-cart .cart-progress__container {
+    padding: 16px 0;
+}
+
+.side-cart .cart-progress__bar {
+    background: #749da3;
+}
+
+.cart-progress__bar-container{
+    position: relative;
+    height: 7px;
+    background-color: #fff;
+    margin: 5px 0;
+    border-radius: 53px;
+    border: 1px solid;
+}
+
+.side-cart .cart-progress__bar {
+    width: 50%;
+    position: absolute;
+    height: 7px;
+    border-radius: 53px;
+}

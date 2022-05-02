@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="{{ 'progress-cart.css' | asset_url }}" media="print" onload="this.media='all'">
+<noscript>{{ 'progress-cart.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class="cart-progress">
+    <p>{{ section.settings.message-minicart }}</p>
+    <div data-progress-bar-container class="cart-progress__bar-container">
+        <div data-progress-bar="" class="cart-progress__bar" style="width: 100%;"/>
+    </div>
+</div>

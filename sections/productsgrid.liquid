@@ -58,7 +58,6 @@
                                         for="{{ variant.id }}-{{ value | handle }}"
                                         id="{{ variant.id }}"
                                         value="{{ value | handle }}"
-                                        onclick=updateProduct(this)
                                         available={{ variant.available }}
                                         idImageProd="product_image-{{ product.url }}"  
                                         image_hover="{{ variant | image_url }}"
@@ -92,10 +91,9 @@
                 </quantity-input>
             </div>
             <button
-                onclick=addToCart(this)
-                id="{{ product.id }}"
+                id={{ product.id }}
                 class='button_productgrid'>
-                <span>{{ 'products.product.add_to_cart' | t }}</span>
+                {{ 'products.product.add_to_cart' | t }}
             </button>
         </div>
     {% endfor %}
