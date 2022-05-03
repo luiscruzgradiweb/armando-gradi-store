@@ -1,0 +1,24 @@
+{
+    "features":[
+        {
+            "title" : "Hola Mundo",
+            "text" : "Este texto es de prueba 1",
+            "image": "imagen_1"
+        },
+        {
+            "title" : "Hola Mundo 2",
+            "text" : "Este texto es de prueba 2",
+            "image": "imagen_2"
+        },
+        {
+            "title" : "Hola Mundo 3",
+            "text" : "Este texto es de prueba 3",
+            "image": "imagen_3"
+        },
+        {
+            "title" : "Le couvre-lit",
+            "text" : "Nos nouveaux couvre-lits s’invitent dans nos chambres pour créer une ambiance douce, cosy et décontractée avec de belles matières texturées. La Fans Zone c’est par ici !",
+            "image": "imagen_4"
+        }
+    ]
+}

@@ -1,0 +1,41 @@
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/js/splide.min.js" defer="defer" ></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.1/dist/css/themes/splide-sea-green.min.css">
+
+<script>
+    document.addEventListener( 'DOMContentLoaded', function () {
+        const splide = new Splide( '#image-carousel', {
+        type   : 'loop',
+        perPage: 2,
+        breakpoints: {
+		640: {
+			perPage: 1,
+		}
+        }
+
+    } )
+
+    splide.mount()
+    const { Autoplay } = splide.Components;
+    Autoplay.play()
+        // Autoplay.pause();   
+    } );
+  </script>
+
+
+<section id="image-carousel" class="splide" aria-label="Beautiful Images">
+    <div class="splide__track">
+        <ul class="splide__list">
+            {% for alt in product.metafields.my_fields.json_metafield.value.features %}
+                <li class="splide__slide">
+                    <div class="slider-item">
+                        <img class="image-item" src='{{ product.metafields.my_fields[alt.image] | image_url }}' loading="lazy" alt="{{ alt.title }}" /> 
+                        <div class="container-text">
+                            <h2 class="title-splide">{{ alt.title }}</h2>
+                            <p class="text-item-splide">{{ alt.text }}</p>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</section>

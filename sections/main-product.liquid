@@ -192,6 +192,7 @@
         {%- endif -%}
       </media-gallery>
     </div>
+
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
       <div id="ProductInfo-{{ section.id }}" class="product__info-container{% if section.settings.enable_sticky_info %} product__info-container--sticky{% endif %}">
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
@@ -542,6 +543,7 @@
     </modal-dialog>
   {%- endfor -%}
 
+
   {%- if product.media.size > 0 -%}
     <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
@@ -570,7 +572,7 @@
       const variantSwitcher = document.querySelector('variant-radios[data-section="{{ section.id }}"]') || document.querySelector('variant-selects[data-section="{{ section.id }}"]');
       noScriptInputWrapper.innerHTML = document.querySelector('.product-form__noscript-wrapper-{{ section.id }}').textContent;
       variantSwitcher.outerHTML = noScriptInputWrapper.outerHTML;
-
+      
       document.querySelector('#Variants-{{ section.id }}').addEventListener('change', function(event) {
         hiddenInput.value = event.currentTarget.value;
       });
@@ -584,7 +586,7 @@
       assign seo_media = product.featured_media
     endif
   -%}
-
+  {% render 'slider' %}
   <script type="application/ld+json">
     {
       "@context": "http://schema.org/",
@@ -630,6 +632,7 @@
     }
   </script>
 </section>
+
 
 {% schema %}
 {

@@ -1,6 +1,6 @@
-class Cart{
+class Cart {
 
-    addProduct(button){
+    addProduct (button) {
          const buttonId=button.target.getAttribute('id')
          const quantity=document.getElementById(`quantity__input-${buttonId}`)
          product.setQuantity(quantity.value);
